@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Ambassador Registration</title>
+    <!-- Import Tailwind CSS for simplicity -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: transparent;
+        background-size: 200% 100%;
+        animation: wave-bg 5s infinite linear; /* Waving flag effect */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      @keyframes wave-bg {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .form-container {
+        background: rgba(255, 255, 255, 0.1); /* Transparent background */
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="file"],
+      textarea {
+        background: rgba(255, 255, 255, 0.1); /* Transparent input fields */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        border-radius: 5px;
+        padding: 12px;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="file"]:focus,
+      textarea:focus {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: #ffd700; /* Gold border on focus */
+        outline: none;
+      }
+
+      button {
+        background: linear-gradient(
+          to right,
+          #ff4500,
+          #ff6347
+        ); /* Gradient red */
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        padding: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(to right, #ff6347, #ff4500);
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col items-center justify-center h-screen">
+      <div class="form-container">
+        <form class="flex flex-col space-y-4">
+          <!-- Full Name -->
+          <input type="text" placeholder="Full Name" required />
+
+          <!-- School or College -->
+          <input type="text" placeholder="School or College" required />
+
+          <!-- Class -->
+          <input type="text" placeholder="Class" required />
+
+          <!-- Image Upload -->
+          <input type="file" accept="image/*" placeholder="Upload Image" />
+
+          <!-- Email -->
+          <input type="email" placeholder="Email" required />
+
+          <!-- Mobile Number -->
+          <input type="text" placeholder="Mobile Number" required />
+
+          <!-- Facebook ID Link -->
+          <input type="url" placeholder="Facebook ID Link" required />
+
+          <!-- Submit Button -->
+          <button type="submit">APPLY</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+This is a simple example of a form to register campus ambassadors for the United Club Association (UCA).
+
+To use this form, simply copy the HTML code into a new file and open it in a web browser. You'll see a form with fields for Full Name, School or College, Class, Image Upload, Email, Mobile Number, and Facebook ID Link.
+
+To submit the form, click the "APPLY" button.

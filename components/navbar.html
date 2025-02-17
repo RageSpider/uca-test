@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Navbar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/index.html" class="logo-container"> </a>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="/index.html" class="navbar__link">
+            <i data-feather="home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/clubs/clubs.html" class="navbar__link">
+            <i data-feather="users"></i>
+            <span>Clubs</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/events/events.html" class="navbar__link">
+            <i data-feather="calendar"></i>
+            <span>Events</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/about/about.html" class="navbar__link">
+            <i data-feather="info"></i>
+            <span>About</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/contact/contact.html" class="navbar__link">
+            <i data-feather="mail"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/contact/join-us.html" class="navbar__link join-us-btn">
+            <i data-feather="user-plus"></i>
+            <span>Join Us</span>
+          </a>
+        </li>
+      </ul>
+      <button class="navbar__toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <script src="/js/navbar.js"></script>
+    <!-- Initialize Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

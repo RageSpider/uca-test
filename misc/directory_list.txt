@@ -1,0 +1,88 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 1010-3961
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)
+
+28-Jan-25  09:06 PM    <DIR>          .
+28-Jan-25  09:01 PM    <DIR>          ..
+01-Jan-25  01:25 PM    <DIR>          .codegpt
+01-Jan-25  01:25 PM                 9 .gitignore
+26-Dec-24  05:49 PM    <DIR>          .vscode
+25-Dec-24  09:59 PM             4,958 about.html
+06-Jan-25  05:16 PM                 0 clubs.html
+24-Dec-24  03:48 PM                 0 contact.html
+01-Jan-25  01:28 PM    <DIR>          css
+28-Jan-25  09:06 PM                 0 directory_list.txt
+25-Dec-24  11:39 PM                 0 event.html
+24-Dec-24  03:55 PM    <DIR>          events
+24-Dec-24  03:50 PM    <DIR>          executive panels
+24-Dec-24  03:55 PM                 0 executive-panel.html
+06-Jan-25  06:44 PM             3,031 footer.html
+24-Dec-24  11:53 AM    <DIR>          images
+07-Jan-25  11:43 PM               425 index.html
+24-Dec-24  03:49 PM                 0 join-us.html
+31-Dec-24  01:39 PM    <DIR>          js
+06-Jan-25  07:05 PM             1,574 navbar.html
+24-Dec-24  08:14 PM             4,452 test.htm
+              12 File(s)         14,449 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\.codegpt
+
+01-Jan-25  01:25 PM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+01-Jan-25  01:25 PM                36 head
+               1 File(s)             36 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\.vscode
+
+26-Dec-24  05:49 PM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+25-Dec-24  09:57 PM               498 launch.json
+06-Jan-25  05:15 PM                47 settings.json
+               2 File(s)            545 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\css
+
+01-Jan-25  01:28 PM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+25-Dec-24  09:58 PM             2,696 about.css
+25-Dec-24  07:57 PM             3,187 clubs.css
+24-Dec-24  03:51 PM                 0 contacts.css
+24-Dec-24  03:56 PM                 0 executive-panel.css
+01-Jan-25  01:28 PM             2,352 footer.css
+01-Jan-25  01:44 PM               166 index.css
+06-Jan-25  06:37 PM             2,811 navbar.css
+               7 File(s)         11,212 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\events
+
+24-Dec-24  03:55 PM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\executive panels
+
+24-Dec-24  03:50 PM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\images
+
+24-Dec-24  11:53 AM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+23-Dec-24  10:45 PM            93,708 DU_Logo.png
+               1 File(s)         93,708 bytes
+
+ Directory of C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)\js
+
+31-Dec-24  01:39 PM    <DIR>          .
+28-Jan-25  09:06 PM    <DIR>          ..
+26-Dec-24  06:45 PM                 0 footer.js
+01-Jan-25  01:28 PM               445 include-footer.js
+06-Jan-25  07:11 PM               893 include-navbar.js
+06-Jan-25  07:05 PM             1,027 navbar.js
+               4 File(s)          2,365 bytes
+
+     Total Files Listed:
+              27 File(s)        122,315 bytes
+              23 Dir(s)  103,271,473,152 bytes free

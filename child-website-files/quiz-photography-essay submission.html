@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yatra+One:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Photography Contest Submission</title>
+    <style>
+      /* General Body Styling */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Yatra One", sans-serif;
+        background: transparent;
+      }
+
+      /* Container Styling */
+      .container {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+      }
+
+      /* Card Styling */
+      .card {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Signup Title */
+      .signup {
+        color: #333;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      /* Form Styling */
+      .registration-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #333;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        outline: none;
+        background: transparent;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus {
+        border-bottom-color: #2196f3;
+      }
+
+      .form-group label {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        font-size: 16px;
+        color: #999;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus ~ label,
+      .form-group input:not(:placeholder-shown) ~ label {
+        top: -10px;
+        font-size: 12px;
+        color: #2196f3;
+      }
+
+      /* Image Upload Styling */
+      .custom-file-upload {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        background: #f9f9f9;
+        cursor: pointer;
+        transition: border-color 0.3s ease, background 0.3s ease;
+      }
+
+      .custom-file-upload:hover {
+        border-color: #2196f3;
+        background: #e3f2fd;
+      }
+
+      .custom-file-upload .icon {
+        font-size: 40px;
+        color: #2196f3;
+      }
+
+      .custom-file-upload .text {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .custom-file-upload input {
+        display: none;
+      }
+
+      /* Submit Button Styling */
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: #2196f3;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: #1976d2;
+      }
+
+      /* Error Message Styling */
+      .error-message {
+        color: #ff4444;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .form-group.invalid input {
+        border-bottom-color: #ff4444;
+      }
+
+      .form-group.invalid label {
+        color: #ff4444;
+      }
+
+      .form-group.invalid .error-message {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h2 class="signup">Photography Contest Submission</h2>
+        <form class="registration-form" id="registrationForm">
+          <div class="form-group">
+            <input type="text" id="fullName" placeholder=" " required />
+            <label for="fullName">Full Name</label>
+            <div class="error-message">Please enter your full name.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="school" placeholder=" " required />
+            <label for="school">School or College Name</label>
+            <div class="error-message">
+              Please enter your school/college name.
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="class" placeholder=" " required />
+            <label for="class">Class</label>
+            <div class="error-message">Please enter your class.</div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">E-mail</label>
+            <div class="error-message">Please enter a valid email address.</div>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="mobile" placeholder=" " required />
+            <label for="mobile">Mobile Number (WhatsApp Preferred)</label>
+            <div class="error-message">Please enter a valid mobile number.</div>
+          </div>
+          <div class="form-group">
+            <input type="url" id="facebook" placeholder=" " required />
+            <label for="facebook">Facebook ID Link</label>
+            <div class="error-message">Please enter a valid Facebook link.</div>
+          </div>
+          <label class="custom-file-upload">
+            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="text">Click to upload image</div>
+            <input id="file" type="file" accept="image/*" required />
+          </label>
+          <button type="submit" class="submit-btn">Apply Now</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Form Validation
+      const form = document.getElementById("registrationForm");
+      const inputs = form.querySelectorAll("input");
+
+      form.addEventListener("submit", (e) => {
+        let isValid = true;
+        inputs.forEach((input) => {
+          if (!input.value.trim()) {
+            isValid = false;
+            input.parentElement.classList.add("invalid");
+          } else {
+            input.parentElement.classList.remove("invalid");
+          }
+        });
+
+        if (!isValid) {
+          e.preventDefault();
+        }
+      });
+
+      // Dynamic Error Handling
+      inputs.forEach((input) => {
+        input.addEventListener("input", () => {
+          if (input.value.trim()) {
+            input.parentElement.classList.remove("invalid");
+          }
+        });
+      });
+
+      // Image Upload Preview (Optional)
+      const fileInput = document.getElementById("file");
+      const uploadLabel = document.querySelector(".custom-file-upload");
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            uploadLabel.innerHTML = `
+              <div class="icon"><i class="fas fa-check-circle"></i></div>
+              <div class="text">${file.name}</div>
+            `;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
+  </body>
+</html>

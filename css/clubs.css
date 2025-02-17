@@ -1,0 +1,207 @@
+/* Root Variables */
+:root {
+  --primary-color: #ad750d; /* Gold */
+  --secondary-color: #6a1b9a; /* Royal Purple */
+  --background-light: #f4f4f4; /* Light Gray */
+  --text-light: #ffffff; /* White */
+  --text-dark: #333333; /* Dark Text */
+  --transition: all 0.3s ease;
+
+  /* Social Media Colors */
+  --facebook-color: #316ff6;
+  --instagram-gradient: linear-gradient(
+    45deg,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
+  --website-color: #84949c;
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--background-light);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("/images/UCA_Clubs_Page_Pic.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  color: var(--text-light);
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Clubs Section */
+.clubs {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-dark);
+}
+.clubs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  font-family: "Lobster Two", cursive;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: var(--text-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card h2 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: var(--primary-color);
+  z-index: 2;
+}
+.card .pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  transition: var(--transition);
+}
+.card:hover .pic {
+  filter: grayscale(0);
+}
+
+/* Social Media Buttons */
+.card .social {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+.social-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.social-btn i {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  z-index: 1;
+}
+.social-btn.facebook {
+  background-color: var(--facebook-color);
+  color: var(--text-light);
+}
+.social-btn.instagram {
+  background: var(--instagram-gradient);
+  color: #8318b4;
+}
+.social-btn.website {
+  background-color: var(--website-color);
+  color: #ffffff;
+}
+
+/* Details Button */
+.details-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 2;
+  transition: var(--transition);
+}
+.details-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+.details-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
