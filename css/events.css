@@ -1,125 +1,190 @@
-/* Root Variables */
+/* Root Variables - Dark Fresh Theme */
 :root {
+  /* --- Color Palette --- */
+  --primary-color: #1e88e5; /* Slightly darker blue */
+  --secondary-color: #121212; /* Near-black for dark mode */
+  --accent-color: #ff4500; /* Brighter orange-red for highlights */
+  --neutral-color: #6b7280; /* Slightly darker gray for subtle UI elements */
+  /* --- Background Colors --- */
+  --background-light: #121212; /* Near-black background */
+  --background-dark: #000000; /* Pure black for deeper contrast */
+  /* --- Text Colors --- */
+  --text-light: #dbb296; /* Pure white for primary text */
+  --text-dark: #99dae2; /* Off-white for secondary text */
+  --text-accent: var(--accent-color); /* Use Accent Color for Highlights */
+  --text-muted: var(--neutral-color); /* Subdued text for descriptions */
+  /* --- Gradient Colors --- */
   --primary-gradient: linear-gradient(
     135deg,
-    #614385,
-    #516395
-  ); /* Featured Section Gradient */
-  --secondary-gradient: linear-gradient(
-    135deg,
-    #516395,
-    #4e54c8
-  ); /* Upcoming Section Gradient */
-  --tertiary-gradient: linear-gradient(
-    135deg,
-    #4e54c8,
-    #355c7d
-  ); /* View All Events Gradient */
-  --quaternary-gradient: linear-gradient(
-    135deg,
-    #355c7d,
-    #2a3b5f
-  ); /* Join a Club Gradient */
-
-  --button-gradient: linear-gradient(
-    135deg,
-    #355c7d 60%,
-    #6c5b7b 30%,
-    #c06c84 10%
-  ); /* Default Button Gradient */
-  --button-hover-gradient: linear-gradient(
-    135deg,
-    #355c7d 10%,
-    #6c5b7b 30%,
-    #c06c84 60%
-  ); /* Hover Button Gradient */
-
-  --text-light: #e4e5e6; /* White */
-  --text-details: #decba4;
-  --text-dark: #658552; /* Dark Text */
-  --text-hero: #c25340;
-  --transition: all 0.3s ease;
-
-  /* Card Colors */
-  --card-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* White */
-  --card-shadow: rgba(0, 0, 0, 0.08); /* Subtle Shadow */
-  --hover-shadow: rgba(0, 0, 0, 0.16); /* Hover Shadow */
+    #1e88e5,
+    #1565c0
+  ); /* Deeper blue gradients */
+  --secondary-gradient: linear-gradient(135deg, #1565c0, #0d47a1);
+  --tertiary-gradient: linear-gradient(135deg, #0d47a1, #01579b);
+  --quaternary-gradient: linear-gradient(135deg, #01579b, #003d6b);
+  /* --- Card Styles --- */
+  --card-bg: #1e1e1e; /* Darker card background */
+  --card-shadow: rgba(0, 0, 0, 0.5); /* Stronger shadow */
+  --hover-shadow: rgba(0, 0, 0, 0.7); /* Even stronger hover shadow */
+  --card-border-radius: 12px;
+  /* --- Typography --- */
+  --base-font-size: 16px;
+  --font-family-base: "Nunito", sans-serif; /* Modern, Readable Font */
+  --font-family-headings: "Roboto Slab", serif; /* Stronger Font */
+  --line-height-base: 1.7;
+  /* --- Spacing --- */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  /* --- Transition Speed --- */
+  --transition: all 0.3s ease-in-out;
 }
 
-/* General Styles */
+/* ==========================================================================
+   1. General Styles & Reset
+   ========================================================================== */
+/* Box-sizing and Reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-light);
-  color: var(--text-dark);
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
 }
 
-/* Hero Section */
+/* Body Styles */
+body {
+  font-size: var(--base-font-size);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS */
+}
+
+/* ==========================================================================
+   2. Accessibility Improvements
+   ========================================================================== */
+/* Focus Styles */
+:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px; /* Avoid overlapping content */
+}
+
+/* --- Loading Animation --- */
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1); /* Light border for visibility */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-left-color: var(--accent-color);
+  animation: spin 1s linear infinite;
+  margin: var(--space-xl) auto; /* Center the spinner */
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   3. Layout & Components
+   ========================================================================== */
+/* --- Hero Section --- */
 .hero {
   background: url("/images/events-title-bg.jpg");
   background-size: cover;
   background-position: center;
-  height: 50vh;
+  height: 60vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--text-hero);
-  font-family: "Cinzel", sans-serif;
+  color: var(--text-light);
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.9); /* Stronger shadow for light text */
+  padding: var(--space-xl);
 }
 .hero h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: -0.02em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.03em;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Featured Events Section */
-.featured-events {
-  padding: 40px 20px;
+/* --- Sections with Gradient Backgrounds --- */
+.featured-events,
+.upcoming-events,
+.all-events-cta,
+.join-club-cta {
+  padding: var(--space-xl) var(--space-lg);
   text-align: center;
-  background: var(--primary-gradient); /* Gradient Background */
   color: var(--text-light);
 }
-.featured-events h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: var(--text-light);
-  font-family: "Playfair Display", serif;
+.featured-events {
+  background: var(--primary-gradient);
+}
+.upcoming-events {
+  background: var(--secondary-gradient);
+}
+.all-events-cta {
+  background: var(--tertiary-gradient);
+}
+.join-club-cta {
+  background: var(--quaternary-gradient);
+}
+.featured-events h2,
+.upcoming-events h2,
+.all-events-cta h2,
+.join-club-cta h2 {
+  font-size: 3rem;
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-family-headings);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 }
-.articles {
+
+/* --- Grid Layout for Articles/Events --- */
+.articles,
+.event-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
   max-width: 1200px;
   margin: 0 auto;
-  padding-inline: 24px;
+  padding: 0 var(--space-lg);
 }
 
-/* Article (Event Card) */
-article {
+/* --- Card Styling --- */
+article,
+.event-item {
   position: relative;
-  border-radius: 16px;
   background: var(--card-bg);
-  box-shadow: 0 4px 8px var(--card-shadow);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 5px 10px var(--card-shadow);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition), transform 0.2s ease-in-out;
 }
-article:hover {
-  transform: translateY(-10px);
+article:hover,
+.event-item:hover {
+  transform: translateY(-8px);
   box-shadow: 0 8px 16px var(--hover-shadow);
 }
-.article-wrapper {
+.article-wrapper,
+.event-item {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -130,198 +195,112 @@ figure {
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
-article img {
+article img,
+.event-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-article:hover img {
+article img:hover,
+.event-item img:hover {
   transform: scale(1.1);
 }
-.article-body {
+.article-body,
+.event-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: var(--space-md);
 }
-article h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: var(--text-light);
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-}
-article p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  flex-grow: 1; /* Ensures descriptions take up remaining space */
-  font-family: "Inter", sans-serif;
-  color: var(--text-dark);
-  opacity: 0.8;
-}
-.details-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: var(--button-gradient); /* Gradient Button */
-  color: var(--text-details);
-  border-radius: 25px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  transition: background 1s ease, transform 0.3s ease; /* Smooth Transition */
-}
-.details-btn:hover {
-  background: var(--button-hover-gradient); /* Hover Gradient */
-  transform: scale(1.05);
-}
-
-/* Upcoming Events Section */
-.upcoming-events {
-  padding: 40px 20px;
-  text-align: center;
-  background: var(--secondary-gradient); /* Gradient Background */
-  color: var(--text-light);
-}
-.upcoming-events h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: var(--text-light);
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.event-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-inline: 24px;
-}
-.event-item {
-  background: var(--card-bg);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px var(--card-shadow);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.event-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px var(--hover-shadow);
-}
+article h3,
 .event-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: var(--text-light);
-  font-family: "Poppins", sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-dark);
+  font-family: var(--font-family-headings);
   font-weight: 600;
 }
+article p,
 .event-item p {
   font-size: 1rem;
-  margin-bottom: 10px;
-  flex-grow: 1; /* Ensures descriptions take up remaining space */
-  font-family: "Inter", sans-serif;
-  color: var(--text-dark);
-  opacity: 0.8;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 .event-item .date {
   font-size: 0.9rem;
-  color: var(--text-light);
-  margin-bottom: 15px;
-  font-family: "Inter", sans-serif;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
 }
-.details-btn {
+
+/* ==========================================================================
+   4. Buttons
+   ========================================================================== */
+.details-btn,
+.cta-button {
   display: inline-block;
-  padding: 10px 20px;
-  background: var(--button-gradient); /* Gradient Button */
-  color: var(--text-details);
-  border-radius: 25px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 1rem;
   font-weight: 600;
-  transition: background 1s ease, transform 0.3s ease; /* Smooth Transition */
-}
-.details-btn:hover {
-  background: var(--button-hover-gradient); /* Hover Gradient */
-  transform: scale(1.05);
-}
-
-/* All Events CTA */
-.all-events-cta {
-  background: var(--tertiary-gradient); /* Gradient Background */
-  color: var(--text-light);
-  font-family: "Poppins", sans-serif;
   text-align: center;
-  padding: 40px 20px;
-}
-.all-events-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.cta-button {
-  padding: 10px 20px;
-  background: var(--button-gradient); /* Gradient Button */
-  color: var(--text-details);
-  border-radius: 25px;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  transition: background 1s ease, transform 0.3s ease; /* Smooth Transition */
+  cursor: pointer;
+  border-radius: 8px;
+  transition: var(--transition);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.details-btn:hover,
 .cta-button:hover {
-  background: var(--button-hover-gradient); /* Hover Gradient */
-  transform: scale(1.05);
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.details-btn:active,
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Join a Club CTA */
-.join-club-cta {
-  background: var(--quaternary-gradient); /* Gradient Background */
-  color: var(--text-light);
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  padding: 40px 20px;
-}
-.join-club-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.cta-button {
-  padding: 10px 20px;
-  background: var(--button-gradient); /* Gradient Button */
-  color: var(--text-details);
-  border-radius: 25px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  transition: background 1s ease, transform 0.3s ease; /* Smooth Transition */
-}
-.cta-button:hover {
-  background: var(--button-hover-gradient); /* Hover Gradient */
-  transform: scale(1.05);
-}
-
-/* Responsive Design */
+/* ==========================================================================
+   5. Responsive Design
+   ========================================================================== */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 3rem;
   }
   .featured-events h2,
-  .upcoming-events h2 {
+  .upcoming-events h2,
+  .all-events-cta h2,
+  .join-club-cta h2 {
     font-size: 2rem;
   }
-}
-@media (max-width: 576px) {
   .articles,
   .event-list {
     grid-template-columns: 1fr;
+    padding: 0 var(--space-sm);
   }
+}
+
+/* ==========================================================================
+   6. Utility Classes (Optional but Recommended)
+   ========================================================================== */
+.text-center {
+  text-align: center;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.bg-dark {
+  background-color: var(--background-dark);
+}
+.shadow-lg {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
 }
