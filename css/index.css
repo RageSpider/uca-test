@@ -1,131 +1,207 @@
 /* Root Variables */
 :root {
-  --primary-color: #ffd700; /* Gold */
-  --secondary-color: #1d4d4f; /* Dark forest-sea */
-  --background-light: #59a9ce; /* Light blue */
-  --background-dark: #689eb8; /* Darker blue */
-  --text-light: #ffffff; /* White */
-  --text-dark: #042c29; /* Dark text */
-  --transition: all 0.3s ease;
+  /* Primary Brand Colors */
+  --primary-color: #ffd700; /* Gold - Used for highlights and CTAs */
+  --secondary-color: #1d4d4f; /* Dark forest-sea - Used for backgrounds and accents */
+
+  /* Background Colors */
+  --background-light: #59a9ce; /* Light blue - Used for lighter sections */
+  --background-dark: #689eb8; /* Darker blue - Used for darker sections */
+
+  /* Text Colors */
+  --text-light: #ffffff; /* White - Used for light text on dark backgrounds */
+  --text-dark: #042c29; /* Dark text - Used for dark text on light backgrounds */
+  --text-medium: #cedbea; /* Medium contrast text - Used for secondary text */
+
+  /* Event Card Color */
+  --event-card: #227c80; /* Dark forest-sea - Used for event cards */
+
+  /* Transition */
+  --transition: all 0.3s ease; /* Smooth transition for animations */
 }
 
 /* Hero Section */
 .hero {
   background-image: url("/images/UCA_Home_Page_Pic.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  height: 100vh; /* Full viewport height */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   text-align: center;
   font-family: "Oswald", sans-serif;
-  color: var(--text-dark);
+  color: var(--text-dark); /* Text color */
+  position: relative; /* For overlay positioning */
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Cover the entire hero section */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Semi-transparent overlay for better text visibility */
+  z-index: 1; /* Place overlay behind text */
+}
+
+.hero-content {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 2; /* Bring content to the front */
+}
+
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
   margin-bottom: 1rem;
+  color: var(--text-light); /* Ensure heading stands out */
 }
+
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem); /* Responsive font size */
   margin-bottom: 2rem;
+  color: var(--text-medium); /* Slightly softer color for body text */
 }
+
+/* Call-to-Action Button */
 .cta-button {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  padding: 0.8rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
+  padding: 0.8rem 2rem; /* Consistent spacing */
+  border-radius: 25px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Bold text for emphasis */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  border: 2px solid var(--primary-color); /* Add border for better visibility */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
 .cta-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Swap colors on hover */
   color: var(--primary-color);
-  transform: scale(1.1);
+  transform: scale(
+    1.05
+  ); /* Slightly toned-down scaling for smoother animation */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 /* About Section */
 .about {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem; /* Consistent spacing */
   text-align: center;
   background-color: var(--background-light);
   font-family: "Merriweather", serif;
+  color: var(
+    --text-dark
+  ); /* Ensure text is readable against the light background */
 }
+
 .about-content h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive font size */
   margin-bottom: 1rem;
+  color: var(--text-dark); /* Ensure heading stands out */
 }
+
 .about-content p {
-  font-size: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto; /* Center align the paragraph */
+  line-height: 1.6; /* Improved readability */
+  color: var(--text-medium); /* Slightly softer color for body text */
 }
 
 /* Clubs Section */
 .clubs {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem; /* Consistent spacing */
   text-align: center;
   font-family: "Quicksand", sans-serif;
   background-color: var(--background-dark);
+  color: var(
+    --text-light
+  ); /* Ensure text is readable against dark background */
 }
+
 .clubs h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive font size */
   margin-bottom: 2rem;
 }
+
 .club-grid {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  margin: 0 auto; /* Center align the grid */
+  max-width: 1200px; /* Limit width for better readability on large screens */
 }
+
 .club-card {
   background-color: var(--secondary-color);
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08); /* Slightly softer shadow for performance */
   overflow: hidden;
-  width: 300px;
+  width: 100%; /* Full width for smaller screens */
+  max-width: 300px; /* Limit width for larger screens */
   text-align: center;
-  transition: var(--transition);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
 }
+
 .club-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
 }
+
 .club-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  aspect-ratio: 3 / 2; /* Ensures consistent aspect ratio across devices */
 }
+
 .club-card h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
   margin: 1rem 0;
+  color: var(--text-dark); /* Ensure text contrasts well with the background */
 }
+
 .club-card p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
   padding: 0 1rem 1rem;
+  line-height: 1.6; /* Improved readability */
 }
 
 /* Events Section */
 .events {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem; /* Consistent spacing */
   text-align: center;
   background-color: var(--background-light);
   font-family: "Quicksand", sans-serif;
+  color: var(
+    --text-dark
+  ); /* Ensure text is readable against the light background */
 }
+
 .events h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive font size */
   margin-bottom: 2rem;
   color: var(--text-dark);
 }
+
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Adjusted min width for smaller screens */
   gap: 24px;
-  max-width: 1200px;
-  margin-inline: auto;
+  max-width: 1200px; /* Limit width for better readability on large screens */
+  margin-inline: auto; /* Center align the grid */
   padding-inline: 24px;
 }
+
 .event-card {
   --img-scale: 1.001;
   --title-color: black;
@@ -134,11 +210,12 @@
   position: relative;
   border-radius: 16px;
   box-shadow: none;
-  background: var(--primary-color);
+  background: var(--event-card);
   transform-origin: center;
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out; /* Smooth transition */
   overflow: hidden;
 }
+
 .event-card a::after {
   position: absolute;
   inset-block: 0;
@@ -146,38 +223,49 @@
   cursor: pointer;
   content: "";
 }
+
 .event-card h2 {
   margin: 0 0 18px 0;
   font-family: "Yatra One", cursive;
-  font-size: 1.9rem;
+  font-size: clamp(1.5rem, 4vw, 1.9rem); /* Responsive font size */
   letter-spacing: 0.06em;
   color: var(--title-color);
-  transition: color var(--transition);
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
 }
+
 .event-card figure {
   margin: 0;
   padding: 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
+
 .event-card img {
   max-width: 100%;
+  height: 100%; /* Ensure image fills the container */
+  object-fit: cover; /* Prevent distortion */
   transform-origin: center;
   transform: scale(var(--img-scale));
-  transition: transform var(--transition);
+  transition: transform 0.3s ease-in-out; /* Smooth scaling */
 }
+
 .event-card .article-body {
   padding: 24px;
 }
+
 .event-card a {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   color: var(--secondary-color);
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
 }
+
 .event-card a:focus {
-  outline: 1px dotted var(--secondary-color);
+  outline: 2px solid var(--secondary-color); /* Improved focus visibility */
+  outline-offset: 4px; /* Space between outline and element */
 }
+
 .event-card a .icon {
   min-width: 24px;
   width: 24px;
@@ -185,34 +273,38 @@
   margin-left: 5px;
   transform: translateX(var(--link-icon-translate));
   opacity: var(--link-icon-opacity);
-  transition: all var(--transition);
+  transition: all 0.3s ease-in-out; /* Smooth icon animation */
 }
+
 .event-card:has(:hover, :focus) {
   --img-scale: 1.1;
   --title-color: var(--secondary-color);
   --link-icon-translate: 0;
   --link-icon-opacity: 1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; /* Slightly softer shadow */
 }
 
 /* Responsive Design */
 @media screen and (max-width: 960px) {
   .event-card {
-    container: card/inline-size;
+    container: card / inline-size; /* Enable container queries */
   }
   .event-card .article-body p {
-    display: none;
+    display: none; /* Hide paragraph text on smaller screens */
+    visibility: hidden; /* Ensure accessibility for screen readers */
   }
 }
+
 @container card (min-width: 380px) {
   .event-card .article-wrapper {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 100px 1fr; /* Two-column layout for larger containers */
     gap: 16px;
+    align-items: center; /* Align items vertically for better visual balance */
   }
   .event-card .article-body {
-    padding-left: 0;
+    padding-left: 0; /* Remove unnecessary padding */
   }
   .event-card figure {
     width: 100%;
@@ -221,18 +313,19 @@
   }
   .event-card figure img {
     height: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
+    aspect-ratio: 1; /* Maintain square aspect ratio */
+    object-fit: cover; /* Prevent image distortion */
   }
 }
 
 /* Screen Reader Only Text */
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+  clip: rect(0, 0, 0, 0); /* Legacy support for older browsers */
+  clip-path: inset(50%); /* Modern approach for clipping content */
+  height: 1px; /* Minimal height to satisfy screen readers */
+  width: 1px; /* Minimal width to satisfy screen readers */
+  margin: -1px; /* Remove from document flow */
+  overflow: hidden; /* Hide overflowing content */
+  position: absolute; /* Take out of normal document flow */
+  white-space: nowrap; /* Prevent line breaks */
 }

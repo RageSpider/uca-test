@@ -4,69 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - United Club Association</title>
+
     <!-- Include centralized fonts -->
-    <script src="js/include-fonts.js"></script>
+    <script src="js/include-fonts.js" defer></script>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/index.css" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/DU_Logo.ico" />
+
     <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/feather-icons" defer></script>
   </head>
   <body>
     <!-- Navbar will be inserted here by include-navbar.js -->
-    <script src="js/include-navbar.js"></script>
+    <script src="js/include-navbar.js" defer></script>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-content">
-        <h1>United Club Association</h1>
-        <p>Don't cry over what you lost, Celebrate over what you won</p>
-        <a href="clubs/clubs.html" class="cta-button">Explore Clubs</a>
+        <!-- Main Hero Title -->
+        <h1 id="hero-heading">United Club Association</h1>
+        <!-- Hero Subtitle -->
+        <p>Don't cry over what you lost; celebrate what you've won.</p>
+        <!-- Call-to-Action Button -->
+        <a
+          href="clubs/clubs.html"
+          class="cta-button"
+          aria-label="Explore Clubs"
+        >
+          Explore Clubs
+        </a>
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" aria-labelledby="about-heading">
       <div class="about-content">
-        <h2>About UCA</h2>
+        <!-- Section Title -->
+        <h2 id="about-heading">About UCA</h2>
+        <!-- Section Description -->
         <p>
-          The United Club Association (UCA) is an organization built to manage
-          and support the clubs of University Laboratory School and College. It
-          is maintained by the presidents of the clubs.
+          The United Club Association (UCA) is an organization dedicated to
+          managing and supporting the clubs of University Laboratory School and
+          College. It is maintained and operated by the club presidents.
         </p>
       </div>
     </section>
 
     <!-- Featured Clubs Section -->
-    <section id="featured-clubs" class="clubs">
-      <h2>Featured Clubs</h2>
+    <section
+      id="featured-clubs"
+      class="clubs"
+      aria-labelledby="featured-clubs-heading"
+    >
+      <!-- Section Title -->
+      <h2 id="featured-clubs-heading">Featured Clubs</h2>
+      <!-- Club Grid Container -->
       <div class="club-grid">
+        <!-- Sports Club Card -->
         <div class="club-card">
-          <img src="images/sports-club.jpg" alt="Sports Club" />
+          <img
+            src="images/sports-club.jpg"
+            alt="A group of students playing soccer in the Sports Club"
+            aria-label="Sports Club Image"
+          />
           <h3>Sports Club</h3>
         </div>
+        <!-- Quiz Club Card -->
         <div class="club-card">
-          <img src="images/quiz-club.jpg" alt="Quiz Club" />
+          <img
+            src="images/quiz-club.jpg"
+            alt="Students participating in a quiz competition in the Quiz Club"
+            aria-label="Quiz Club Image"
+          />
           <h3>Quiz Club</h3>
         </div>
+        <!-- Photography Club Card -->
         <div class="club-card">
-          <img src="images/photography-club.jpg" alt="Photography Club" />
+          <img
+            src="images/photography-club.jpg"
+            alt="A student taking photos with a DSLR camera in the Photography Club"
+            aria-label="Photography Club Image"
+          />
           <h3>Photography Club</h3>
         </div>
       </div>
     </section>
 
     <!-- Featured Events Section -->
-    <section class="events">
-      <h2>Featured Events</h2>
+    <section class="events" aria-labelledby="featured-events-heading">
+      <!-- Section Title -->
+      <h2 id="featured-events-heading">Featured Events</h2>
+      <!-- Event Grid Container -->
       <div class="event-grid">
-        <!-- Event Card 1 -->
+        <!-- Event Card 1: SnapFest -->
         <article class="event-card">
           <div class="article-wrapper">
             <figure>
-              <img src="images/Snapfest_Event_Pic.jpg" alt="SnapFest" />
+              <img
+                src="images/Snapfest_Event_Pic.jpg"
+                alt="SnapFest: A photography event showcasing prize-winning pictures from the Prize Giving Ceremony at TSC."
+              />
             </figure>
             <div class="article-body">
               <h2>SnapFest</h2>
@@ -74,7 +116,11 @@
                 Hosted by ULPC, this event featured the best pictures from the
                 Prize Giving Ceremony held at TSC.
               </p>
-              <a href="#" class="read-more">
+              <a
+                href="#"
+                class="read-more"
+                aria-label="Read more about SnapFest"
+              >
                 Read more <span class="sr-only">about SnapFest</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -92,13 +138,13 @@
             </div>
           </div>
         </article>
-        <!-- Event Card 2 -->
+        <!-- Event Card 2: TriQuest -->
         <article class="event-card">
           <div class="article-wrapper">
             <figure>
               <img
                 src="images/TriQuest- Battle_of_Knowledge.jpg"
-                alt="TriQuest"
+                alt="TriQuest: A quiz competition hosted by Quiz Club, Science Club, and Language Club."
               />
             </figure>
             <div class="article-body">
@@ -107,7 +153,11 @@
                 A quiz competition hosted by three clubs: Quiz Club, Science
                 Club, and Language Club.
               </p>
-              <a href="#" class="read-more">
+              <a
+                href="#"
+                class="read-more"
+                aria-label="Read more about TriQuest"
+              >
                 Read more <span class="sr-only">about TriQuest</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -125,19 +175,23 @@
             </div>
           </div>
         </article>
-        <!-- Event Card 3 -->
+        <!-- Event Card 3: Badminton Tournament -->
         <article class="event-card">
           <div class="article-wrapper">
             <figure>
               <img
                 src="images/Badminton_Tournament_2025.jpeg"
-                alt="Badminton Tournament"
+                alt="Badminton Tournament: A sports event organized by the Sports Club."
               />
             </figure>
             <div class="article-body">
               <h2>Badminton Tournament</h2>
               <p>A Badminton tournament hosted by Sports Club.</p>
-              <a href="#" class="read-more">
+              <a
+                href="#"
+                class="read-more"
+                aria-label="Read more about Badminton Tournament"
+              >
                 Read more
                 <span class="sr-only">about Badminton Tournament</span>
                 <svg
@@ -160,11 +214,18 @@
     </section>
 
     <!-- Footer will be inserted here by include-footer.js -->
-    <script src="js/include-footer.js"></script>
+    <script src="js/include-footer.js" defer></script>
 
     <!-- Initialize Feather Icons -->
     <script>
-      feather.replace();
+      // Check if feather is defined before initializing
+      if (typeof feather !== "undefined") {
+        feather.replace({
+          "aria-hidden": "true", // Improve accessibility by hiding icons from screen readers
+        });
+      } else {
+        console.error("Feather Icons library is not loaded.");
+      }
     </script>
   </body>
 </html>
