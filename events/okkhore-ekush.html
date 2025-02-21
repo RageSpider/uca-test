@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>অক্ষরে একুশ</title>
+    <link rel="stylesheet" href="/event-css/okkhore-ekush.css" />
+  </head>
+  <body>
+    <img href="/images/abstract-green-red-art.jpg" alt="অক্ষরে একুশ" />
+    <h1 class="headline">
+      <span style="color: #cc0000">অক্ষরে</span>
+      <span style="color: #6aa84f">একুশ</span>
+    </h1>
+    <p class="description">
+      <span style="color: #e06666">একুশে ফেব্রুয়ারি,</span>
+      <span style="color: #6aa84f"
+        >আন্তর্জাতিক মাতৃভাষা দিবস। এই দিনে ভাষা আন্দোলনকারীরা বাংলা ভাষাকে
+        রাষ্ট্রভাষা করার দাবিতে আন্দোলন করেছিলেন। ভাষা শহীদদের এই মহান উৎসর্গের
+        কারণে আজ আমরা বাংলায় কথা বলি, বাংলায় হাসি, বাংলায় কাঁদি, মনের ভাব
+        প্রকাশ করতে বাংলা ব্যবহার করি। "অক্ষরে একুশ" হলো ভাষা শহীদদের সম্মানে
+        আয়োজিত একটি ইভেন্ট। বাংলা ভাষাকে স্থির ছবির মাধ্যমে, বাংলা অক্ষরের
+        মাধ্যমে লিখে ভাষার প্রতি আপনার ভালোবাসা প্রকাশ করতে ইভেন্টে যোগ দিন,
+        দেখিয়ে দিন আপনার ভাষার প্রতি ভালোবাসা ও শ্রদ্ধা!</span
+      >
+    </p>
+    <div class="buttons">
+      <a
+        href="#"
+        class="c-button c-button--gooey"
+        style="border-color: #e06666; --blob-color: #e06666"
+      >
+        ফটোগ্রাফি কনটেস্ট
+        <div class="c-button__blobs">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </a>
+      <a
+        href="#"
+        class="c-button c-button--gooey"
+        style="border-color: #6aa84f; --blob-color: #6aa84f"
+      >
+        কুইজ প্রতিযোগিতা
+        <div class="c-button__blobs">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </a>
+      <a
+        href="#"
+        class="c-button c-button--gooey"
+        style="border-color: #cc0000; --blob-color: #cc0000"
+      >
+        রচনা প্রতিযোগিতা
+        <div class="c-button__blobs">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- SVG Filter for Gooey Effect -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="10"
+            result="blur"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          ></feColorMatrix>
+          <feBlend in="SourceGraphic" in2="goo"></feBlend>
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>
