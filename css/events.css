@@ -149,9 +149,9 @@ body {
 .upcoming-events h2,
 .all-events-cta h2,
 .join-club-cta h2 {
+  font-family: "Montserrat", "Anek Bangla";
   font-size: 3rem;
   margin-bottom: var(--space-lg);
-  font-family: var(--font-family-headings);
   font-weight: 700;
   letter-spacing: 0.01em;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
@@ -216,6 +216,7 @@ article img:hover,
 }
 article h3,
 .event-item h3 {
+  font-family: "Alkatra", "Montserrat";
   font-size: 1.75rem;
   margin-bottom: var(--space-sm);
   color: var(--text-dark);
@@ -224,6 +225,7 @@ article h3,
 }
 article p,
 .event-item p {
+  font-family: "Montserrat", "Anek Bangla";
   font-size: 1rem;
   margin-bottom: var(--space-md);
   flex-grow: 1;
@@ -243,6 +245,7 @@ article p,
 .cta-button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
+  font-family: "Comfortaa", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
