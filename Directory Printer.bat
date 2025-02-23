@@ -17,8 +17,8 @@ REM Clear the output file if it already exists
 >> "%output_file%" echo -----------------------------------
 >> "%output_file%" echo.
 
-REM Recursively list all files and directories
-dir "%folder_path%" /s /b >> "%output_file%"
+REM Recursively list all files and directories with details
+dir "%folder_path%" /s /b /o:n >> "%output_file%"
 
 REM Notify the user
 echo Directory listing saved to "%output_file%"
