@@ -25,7 +25,27 @@ function displayRandomClubs() {
   const clubsList = document.getElementById("clubs-list");
   if (!clubsList) return;
 
-  const shuffledClubs = shuffleArray([...allClubs]).slice(0, 6); // Shuffle and pick 6
+  // Check if we already have stored clubs and they're not expired
+  const storedData = JSON.parse(localStorage.getItem("randomClubs") || "{}");
+  const now = new Date().getTime();
+
+  let shuffledClubs;
+  if (storedData.clubs && storedData.expiry > now) {
+    // Use stored clubs if they're not expired
+    shuffledClubs = storedData.clubs;
+  } else {
+    // Generate new random clubs and store them
+    shuffledClubs = shuffleArray([...allClubs]).slice(0, 6);
+    // Store with 24-hour expiry
+    localStorage.setItem(
+      "randomClubs",
+      JSON.stringify({
+        clubs: shuffledClubs,
+        expiry: now + 24 * 60 * 60 * 1000, // 24 hours
+      })
+    );
+  }
+
   clubsList.innerHTML = ""; // Clear the list
 
   shuffledClubs.forEach((club) => {
