@@ -1,9 +1,9 @@
 @echo off
 REM Specify the folder path
-set "folder_path=C:\Users\Frsdho42\Desktop\1\Club\Club Websites\UCA(United Club Association)"
+set "folder_path=C:\Users\Frsdho42\Documents\GitHub\uca-test"
 
 REM Specify the output file path
-set "output_file=C:\Users\Frsdho42\Desktop\1\Club\directory_list.txt"
+set "output_file=C:\Users\Frsdho42\Documents\GitHub\uca-test\directory_list.txt"
 
 REM Check if the folder exists
 if not exist "%folder_path%" (
