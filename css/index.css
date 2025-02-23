@@ -3,19 +3,15 @@
   /* Primary Brand Colors */
   --primary-color: #ffd700; /* Gold - Used for highlights and CTAs */
   --secondary-color: #1d4d4f; /* Dark forest-sea - Used for backgrounds and accents */
-
   /* Background Colors */
   --background-light: #59a9ce; /* Light blue - Used for lighter sections */
   --background-dark: #689eb8; /* Darker blue - Used for darker sections */
-
   /* Text Colors */
   --text-light: #ffffff; /* White - Used for light text on dark backgrounds */
   --text-dark: #042c29; /* Dark text - Used for dark text on light backgrounds */
   --text-medium: #cedbea; /* Medium contrast text - Used for secondary text */
-
   /* Event Card Color */
   --event-card: #227c80; /* Dark forest-sea - Used for event cards */
-
   /* Transition */
   --transition: all 0.3s ease; /* Smooth transition for animations */
 }
@@ -66,8 +62,8 @@
   color: var(--text-medium); /* Slightly softer color for body text */
 }
 
-/* Call-to-Action Button */
-.cta-button {
+/* Explore Clubs Button */
+.explore-clubs-button {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   padding: 0.8rem 2rem; /* Consistent spacing */
@@ -79,7 +75,7 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.cta-button:hover {
+.explore-clubs-button:hover {
   background-color: var(--secondary-color); /* Swap colors on hover */
   color: var(--primary-color);
   transform: scale(
@@ -92,7 +88,7 @@
 .about {
   padding: 4rem 2rem; /* Consistent spacing */
   text-align: center;
-  background-color: var(--background-light);
+  background-image: linear-gradient(#283c86, #3b5f9b);
   font-family: "Merriweather", serif;
   color: var(
     --text-dark
@@ -118,7 +114,7 @@
   padding: 4rem 2rem; /* Consistent spacing */
   text-align: center;
   font-family: "Quicksand", sans-serif;
-  background-color: var(--background-dark);
+  background-image: linear-gradient(#3b5f9b, #3e8d6b);
   color: var(
     --text-light
   ); /* Ensure text is readable against dark background */
@@ -130,10 +126,12 @@
 }
 
 .club-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Improved grid layout for responsiveness */
   gap: 2rem;
-  flex-wrap: wrap;
   margin: 0 auto; /* Center align the grid */
   max-width: 1200px; /* Limit width for better readability on large screens */
 }
@@ -177,7 +175,7 @@
 .events {
   padding: 4rem 2rem; /* Consistent spacing */
   text-align: center;
-  background-color: var(--background-light);
+  background-image: linear-gradient(#3e8d6b, #45a247);
   font-family: "Quicksand", sans-serif;
   color: var(
     --text-dark
@@ -193,7 +191,7 @@
 .event-grid {
   display: grid;
   grid-template-columns: repeat(
-    auto-fill,
+    auto-fit,
     minmax(300px, 1fr)
   ); /* Adjusted min width for smaller screens */
   gap: 24px;
@@ -210,7 +208,7 @@
   position: relative;
   border-radius: 16px;
   box-shadow: none;
-  background: var(--event-card);
+  background: linear-gradient(#ada996, #f2f2f2, #dbdbdb, #eaeaea);
   transform-origin: center;
   transition: all 0.3s ease-in-out; /* Smooth transition */
   overflow: hidden;
@@ -226,7 +224,7 @@
 
 .event-card h2 {
   margin: 0 0 18px 0;
-  font-family: "Yatra One", cursive;
+  font-family: "Yatra One", "Li Padmasetu Unicode", cursive;
   font-size: clamp(1.5rem, 4vw, 1.9rem); /* Responsive font size */
   letter-spacing: 0.06em;
   color: var(--title-color);
@@ -290,6 +288,7 @@
   .event-card {
     container: card / inline-size; /* Enable container queries */
   }
+
   .event-card .article-body p {
     display: none; /* Hide paragraph text on smaller screens */
     visibility: hidden; /* Ensure accessibility for screen readers */
@@ -303,14 +302,17 @@
     gap: 16px;
     align-items: center; /* Align items vertically for better visual balance */
   }
+
   .event-card .article-body {
     padding-left: 0; /* Remove unnecessary padding */
   }
+
   .event-card figure {
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
+
   .event-card figure img {
     height: 100%;
     aspect-ratio: 1; /* Maintain square aspect ratio */
