@@ -28,232 +28,337 @@
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <!-- Navbar will be inserted here by include-navbar.js -->
+    <!-- Navbar -->
     <script src="/js/include-navbar.js"></script>
 
     <!-- Clubs Section -->
     <section class="clubs">
-      <h2>Our Clubs</h2>
+      <h2>Explore Our Clubs</h2>
       <div class="container">
         <!-- Debate Club -->
-        <div class="card">
+        <div class="card" data-club="debate" style="--i: 1">
           <div
             class="pic"
             style="background-image: url('/images/debate-club.jpg')"
           ></div>
-          <h2>Debate Club</h2>
-          <div class="social">
-            <a href="#" class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a href="#" class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a href="#" class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Debate Club</h2>
+            <p>
+              Master the art of persuasion and critical thinking through
+              competitive debates.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/uldc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/uldc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/uldc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/debate-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/debate-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Photography Club -->
-        <div class="card">
+        <div class="card" data-club="photography" style="--i: 2">
           <div
             class="pic"
             style="background-image: url('/images/photography-club.jpg')"
           ></div>
-          <h2>Photography Club</h2>
-          <div class="social">
-            <a
-              href="https://www.facebook.com/ulpc.fb"
-              class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/ulpc.ig"
-              class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a
-              href="https://sites.google.com/view/ulpc/home"
-              class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Photography Club</h2>
+            <p>
+              Capture moments and tell stories through the lens of creativity.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ulpc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ulpc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ulpc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/photography-club.html" class="details-btn"
+              >Details</a
+            >
           </div>
-          <a href="/clubs/photography-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Sports Club -->
-        <div class="card">
+        <div class="card" data-club="sports" style="--i: 3">
           <div
             class="pic"
             style="background-image: url('/images/sports-club.jpg')"
           ></div>
-          <h2>Sports Club</h2>
-          <div class="social">
-            <a href="#" class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a href="#" class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a href="#" class="social-btn class=social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Sports Club</h2>
+            <p>
+              Embrace athleticism and team spirit through various sporting
+              activities.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ulsc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ulsc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ulsc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/sports-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/sports-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Quiz Club -->
-        <div class="card">
+        <div class="card" data-club="quiz" style="--i: 4">
           <div
             class="pic"
             style="background-image: url('/images/quiz-club.jpg')"
           ></div>
-          <h2>Quiz Club</h2>
-          <div class="social">
-            <a
-              href="https://www.facebook.com/ulqc.fb"
-              class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/ulqc.ig"
-              class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/ulqc-university-laboratory-quiz-club"
-              class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Quiz Club</h2>
+            <p>
+              Challenge your knowledge and compete in exciting quiz
+              competitions.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ulqc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ulqc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ulqc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/quiz-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/quiz-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Science Club -->
-        <div class="card">
+        <div class="card" data-club="science" style="--i: 5">
           <div
             class="pic"
             style="background-image: url('/images/science-club.jpg')"
           ></div>
-          <h2>Science Club</h2>
-          <div class="social">
-            <a
-              href="https://www.facebook.com/ulscc.fb"
-              class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/ulscc.ig"
-              class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a
-              href="https://sites.google.com/view/ulscc"
-              class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Science Club</h2>
+            <p>
+              Explore the wonders of science through experiments and research.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ulscc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ulscc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ulscc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/science-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/science-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- ICT Club -->
-        <div class="card">
+        <div class="card" data-club="ict" style="--i: 6">
           <div
             class="pic"
             style="background-image: url('/images/ict-club.jpg')"
           ></div>
-          <h2>ICT Club</h2>
-          <div class="social">
-            <a
-              href="https://www.facebook.com/ulic.fb"
-              class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/ulic.ig"
-              class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a
-              href="https://sites.google.com/view/ulict"
-              class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>ICT Club</h2>
+            <p>Dive into the world of technology and digital innovation.</p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ulic.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ulic.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ulict"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/ict-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/ict-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Literature Club -->
-        <div class="card">
+        <div class="card" data-club="literature" style="--i: 7">
           <div
             class="pic"
             style="background-image: url('/images/literature-club.jpg')"
           ></div>
-          <h2>Literature Club</h2>
-          <div class="social">
-            <a href="#" class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a href="#" class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a href="#" class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Literature Club</h2>
+            <p>
+              Discover the beauty of words through reading and creative writing.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ullc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ullc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ullc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/literature-club.html" class="details-btn"
+              >Details</a
+            >
           </div>
-          <a href="/clubs/literature-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Cultural Club -->
-        <div class="card">
+        <div class="card" data-club="cultural" style="--i: 8">
           <div
             class="pic"
             style="background-image: url('/images/cultural-club.jpg')"
           ></div>
-          <h2>Cultural Club</h2>
-          <div class="social">
-            <a href="#" class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a href="#" class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a href="#" class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Cultural Club</h2>
+            <p>
+              Celebrate diversity through art, music, and cultural performances.
+            </p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ulcc.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ulcc.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ulcc"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/cultural-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/cultural-club.html" class="details-btn">Details</a>
         </div>
 
         <!-- Language Club -->
-        <div class="card">
+        <div class="card" data-club="language" style="--i: 9">
           <div
             class="pic"
             style="background-image: url('/images/language-club.jpg')"
           ></div>
-          <h2>Language Club</h2>
-          <div class="social">
-            <a href="#" class="social-btn facebook"
-              ><i data-feather="facebook"></i
-            ></a>
-            <a href="#" class="social-btn instagram"
-              ><i data-feather="instagram"></i
-            ></a>
-            <a href="#" class="social-btn website"
-              ><i data-feather="globe"></i
-            ></a>
+          <div class="card-content">
+            <h2>Language Club</h2>
+            <p>Learn and practice new languages in an engaging environment.</p>
+            <div class="social">
+              <a
+                href="https://www.facebook.com/ullc2.fb"
+                class="social-btn"
+                aria-label="Facebook"
+                ><i data-feather="facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/ullc2.ig"
+                class="social-btn"
+                aria-label="Instagram"
+                ><i data-feather="instagram"></i
+              ></a>
+              <a
+                href="https://sites.google.com/view/ullc2"
+                class="social-btn"
+                aria-label="Website"
+                ><i data-feather="globe"></i
+              ></a>
+            </div>
+            <a href="/clubs/language-club.html" class="details-btn">Details</a>
           </div>
-          <a href="/clubs/language-club.html" class="details-btn">Details</a>
         </div>
       </div>
     </section>
 
-    <!-- Footer will be inserted here by include-footer.js -->
+    <!-- Footer -->
     <script src="/js/include-footer.js"></script>
 
-    <!-- Initialize Feather Icons -->
+    <!-- Initialize Icons -->
     <script>
       feather.replace();
     </script>

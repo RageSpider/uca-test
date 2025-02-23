@@ -1,0 +1,233 @@
+:root {
+  --club-primary: #1a1a1a; /* Rich Black */
+  --club-secondary: #2d2d2d; /* Dark Gray */
+  --club-accent: #404040; /* Medium Gray */
+  --club-highlight: #c0c0c0; /* Silver */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --science-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --navbar-height: 80px;
+  --footer-height: 400px;
+}
+
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--club-secondary);
+  color: var(--text-light);
+  font-family: "Exo 2", sans-serif;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Molecular Grid Background */
+.club-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      45deg,
+      transparent 48%,
+      var(--club-accent) 49%,
+      var(--club-accent) 51%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      var(--club-accent) 49%,
+      var(--club-accent) 51%,
+      transparent 52%
+    );
+  background-size: 30px 30px;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Periodic Table Style Header */
+.club-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-primary);
+  position: relative;
+  margin-bottom: 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--science-shadow);
+}
+
+.element-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.element {
+  background: var(--club-secondary);
+  color: var(--club-highlight);
+  padding: 2.5rem;
+  border: 2px solid var(--club-accent);
+  border-radius: 4px;
+  font-family: "Space Mono", monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.faded-u {
+  opacity: 0.5;
+}
+
+.element::before {
+  content: attr(data-atomic);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 0.8rem;
+  color: var(--club-highlight);
+  opacity: 0.7;
+}
+
+.element:hover {
+  transform: translateY(-5px);
+  background: var(--club-accent);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(192, 192, 192, 0.2);
+}
+
+.club-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.club-description strong {
+  color: var(--club-highlight);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+/* Lab Card Styles */
+.lab-card {
+  background: var(--club-secondary);
+  border: 1px solid var(--club-accent);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: var(--science-shadow);
+}
+
+.lab-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--club-highlight), var(--club-accent));
+}
+
+.card-header {
+  background: var(--club-primary);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+  background: var(--club-secondary);
+}
+
+.experiment-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.experiment-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--club-primary);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.experiment-list li:hover {
+  background: var(--club-accent);
+  transform: translateX(5px);
+}
+
+/* Social Grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-item {
+  background: var(--club-primary);
+  padding: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--club-accent);
+}
+
+.social-item:hover {
+  transform: translateY(-5px);
+  background: var(--club-accent);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-item i {
+  font-size: 2rem;
+  color: var(--club-highlight);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .element-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .experiment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}

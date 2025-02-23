@@ -1,0 +1,41 @@
+:root {
+  --club-primary: #1a1a1a; /* Black */
+  --club-secondary: #ffd700; /* Golden */
+  --club-accent: #8b4513; /* Antique Brown */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+}
+
+.club-header {
+  background: linear-gradient(135deg, var(--club-primary), #2c1810);
+  padding: 6rem 2rem;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.club-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 215, 0, 0.05) 0px,
+    rgba(255, 215, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  animation: pageFlip 10s linear infinite;
+}
+
+@keyframes pageFlip {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}

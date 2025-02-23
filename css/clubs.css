@@ -1,207 +1,360 @@
 /* Root Variables */
 :root {
-  --primary-color: #ad750d; /* Gold */
-  --secondary-color: #6a1b9a; /* Royal Purple */
-  --background-light: #f4f4f4; /* Light Gray */
-  --text-light: #ffffff; /* White */
-  --text-dark: #333333; /* Dark Text */
-  --transition: all 0.3s ease;
+  /* Base colors */
+  --background: #f0f2f5;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Social Media Colors */
-  --facebook-color: #316ff6;
-  --instagram-gradient: linear-gradient(
-    45deg,
-    #fd1d1d,
-    #f56040,
-    #f77737,
-    #fcaf45,
-    #ffdc80
-  );
-  --website-color: #84949c;
+  /* Club-specific colors */
+  --debate-color: #e63946; /* Bold red */
+  --photography-color: #457b9d; /* Ocean blue */
+  --sports-color: #2a9d8f; /* Teal */
+  --quiz-color: #9b5de5; /* Purple */
+  --science-color: #00b4d8; /* Bright blue */
+  --ict-color: #3a0ca3; /* Deep purple */
+  --literature-color: #bc6c25; /* Warm brown */
+  --cultural-color: #ff006e; /* Pink */
+  --language-color: #fb8500; /* Orange */
 }
 
 /* General Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
-  background-color: var(--background-light);
+  background: var(--background);
   font-family: "Poppins", sans-serif;
   color: var(--text-dark);
-}
-
-/* Hero Section */
-.hero {
-  background-image: url("/images/UCA_Clubs_Page_Pic.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: "Oswald", sans-serif;
-  color: var(--text-light);
-}
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.hero-content p {
-  font-size: 1.2rem;
-}
-
-/* Clubs Section */
-.clubs {
-  padding: 40px 20px;
-  text-align: center;
-  color: var(--text-dark);
-}
-.clubs h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: var(--primary-color);
-  font-family: "Lobster Two", cursive;
-}
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Card Styles */
-.card {
+  line-height: 1.6;
   position: relative;
-  width: 100%;
-  height: 300px;
-  background-color: var(--text-light);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  overflow-x: hidden;
 }
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.card h2 {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: var(--primary-color);
-  z-index: 2;
-}
-.card .pic {
-  position: absolute;
+
+body::before {
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%);
-  transition: var(--transition);
-}
-.card:hover .pic {
-  filter: grayscale(0);
+  background: linear-gradient(
+    45deg,
+    rgba(238, 238, 238, 0.5) 25%,
+    rgba(245, 245, 245, 0.5) 25%,
+    rgba(245, 245, 245, 0.5) 50%,
+    rgba(238, 238, 238, 0.5) 50%,
+    rgba(238, 238, 238, 0.5) 75%,
+    rgba(245, 245, 245, 0.5) 75%,
+    rgba(245, 245, 245, 0.5) 100%
+  );
+  background-size: 100px 100px;
+  animation: backgroundMove 30s linear infinite;
+  z-index: -1;
 }
 
-/* Social Media Buttons */
-.card .social {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  display: flex;
-  gap: 10px;
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
 }
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(120deg, var(--primary-color), #1d4ed8);
+  padding: 8rem 2rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Clubs Section */
+.clubs {
+  padding: 4rem 2rem;
+}
+
+.clubs h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Fix Grid Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed to exactly 3 columns */
+  gap: 2.5rem;
+  padding: 0 2rem;
+}
+
+/* Ensure consistent card sizing */
+.card {
+  width: 100%;
+  min-width: 300px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  height: fit-content; /* Ensure consistent height */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: transform 0.6s;
+  transform: translateX(-100%);
+}
+
+.card:hover::before {
+  transform: translateX(100%);
+}
+
+.card-content {
+  padding: 2rem;
+  color: var(--card-text);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6) 50%,
+    transparent
+  );
+}
+
+.card h2 {
+  color: var(--card-accent);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.card p {
+  color: var(--card-text);
+  opacity: 1;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Club-specific colors and gradients with better contrast */
+.card[data-club="debate"] {
+  --card-bg: linear-gradient(135deg, #2a1650, #4b0082);
+  --card-accent: #ffd700;
+  --card-text: #e0e0e0;
+  box-shadow: 0 8px 32px rgba(75, 0, 130, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.card[data-club="photography"] {
+  --card-bg: linear-gradient(135deg, #4a3121, #1a1a1a);
+  --card-accent: #d4a574; /* Lighter brown */
+  --card-text: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(62, 39, 35, 0.2);
+}
+
+.card[data-club="sports"] {
+  --card-bg: linear-gradient(135deg, #1a237e, #000033); /* Deeper navy */
+  --card-accent: #e0e0e0;
+  --card-text: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 128, 0.2);
+}
+
+.card[data-club="quiz"] {
+  --card-bg: linear-gradient(135deg, #000000, #1a1a1a);
+  --card-accent: #ffd700;
+  --card-text: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card[data-club="science"] {
+  --card-bg: linear-gradient(135deg, #1a1a1a, #2c3e50);
+  --card-accent: #e0e0e0; /* Brighter silver */
+  --card-text: #ffffff;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+}
+
+.card[data-club="ict"] {
+  --card-bg: linear-gradient(135deg, #4b0082, #2a1650);
+  --card-accent: #ffd700;
+  --card-text: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(75, 0, 130, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.card[data-club="literature"] {
+  --card-bg: linear-gradient(135deg, #1a1a1a, #2a1650);
+  --card-accent: #ffd700;
+  --card-text: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(44, 40, 35, 0.2);
+}
+
+.card[data-club="cultural"] {
+  --card-bg: linear-gradient(
+    135deg,
+    #40b5ad,
+    #ff9ecd
+  ); /* Stronger teal to pink */
+  --card-accent: #b37f7f;
+  --card-text: #ecbfbf;
+  box-shadow: 0 8px 32px rgba(178, 223, 219, 0.2);
+}
+
+.card[data-club="language"] {
+  --card-bg: linear-gradient(135deg, #1a1a1a, #234b7c); /* Deeper blue */
+  --card-accent: #ffffff;
+  --card-text: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(30, 63, 102, 0.2);
+}
+
+.pic {
+  height: 220px; /* Fixed height for all images */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.7));
+}
+
+/* Social Links */
+.social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 .social-btn {
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  background-color: transparent;
-  position: relative;
   border-radius: 50%;
-  cursor: pointer;
+  color: var(--card-accent);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
   transition: var(--transition);
 }
-.social-btn i {
-  font-size: 1.2rem;
-  color: var(--text-light);
-  z-index: 1;
-}
-.social-btn.facebook {
-  background-color: var(--facebook-color);
-  color: var(--text-light);
-}
-.social-btn.instagram {
-  background: var(--instagram-gradient);
-  color: #8318b4;
-}
-.social-btn.website {
-  background-color: var(--website-color);
-  color: #ffffff;
+
+.social-btn:hover {
+  background: var(--card-accent);
+  color: var(--card-bg);
+  transform: translateY(-3px);
 }
 
 /* Details Button */
 .details-btn {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  padding: 10px 20px;
-  background-color: var(--secondary-color);
-  color: var(--text-light);
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-family: "Comfortaa", sans-serif;
-  font-weight: 600;
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  margin-top: 1.5rem;
+  color: var(--card-accent);
   text-decoration: none;
-  overflow: hidden;
-  z-index: 2;
+  border: 2px solid var(--card-accent);
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   transition: var(--transition);
-}
-.details-btn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0) 70%
-  );
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease;
-  z-index: -1;
-}
-.details-btn:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.details-btn:hover {
+  background: var(--card-accent);
+  color: var(--card-bg);
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.card {
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
-@media (max-width: 576px) {
-  .container {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .card {
+    min-width: unset;
+  }
+
+  .clubs {
+    padding: 3rem 1rem;
+  }
+
+  .clubs h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
   }
 }

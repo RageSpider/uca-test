@@ -1,0 +1,224 @@
+:root {
+  --club-primary: #00ff41; /* Matrix Green */
+  --club-secondary: #0a192f; /* Deep Tech Blue */
+  --club-accent: #64ffda; /* Cyber Mint */
+  --text-light: #e6f1ff;
+  --text-dark: #5b81b9;
+  --neon-glow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.3),
+    0 0 30px rgba(0, 255, 65, 0.1);
+  --cyber-gradient: linear-gradient(135deg, #00ff41, #64ffda);
+  --navbar-height: 80px; /* Adjust based on your navbar height */
+  --footer-height: 400px; /* Adjust based on your footer height */
+}
+
+/* Club Page Layout */
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--club-secondary);
+  color: var(--text-light);
+  font-family: "Space Mono", "Courier New", monospace;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header Section */
+.club-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-secondary);
+  border: 2px solid var(--club-primary);
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.club-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, var(--club-secondary) 21px, transparent 1%)
+      center,
+    linear-gradient(var(--club-secondary) 21px, transparent 1%) center,
+    var(--club-primary);
+  background-size: 22px 22px;
+  opacity: 0.1;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 44px 44px;
+  }
+}
+
+.club-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  border: 2px solid var(--club-primary);
+  margin-bottom: 2rem;
+  box-shadow: var(--neon-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-logo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--neon-glow), 0 0 40px rgba(0, 255, 65, 0.2);
+}
+
+.club-title {
+  color: var(--club-primary);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: var(--neon-glow);
+}
+
+.club-description {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: "Space Mono", monospace;
+}
+
+.club-description strong {
+  display: block;
+  color: var(--club-accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Content Sections */
+.club-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.about-section,
+.connect-section {
+  background: rgba(10, 25, 47, 0.7);
+  padding: 2.5rem;
+  border: 1px solid var(--club-primary);
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 255, 65, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.about-section:hover,
+.connect-section:hover {
+  border-color: var(--club-accent);
+  box-shadow: 0 8px 30px rgba(100, 255, 218, 0.2);
+  transform: translateY(-5px);
+}
+
+.club-content h2 {
+  color: var(--club-primary);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.club-content h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--cyber-gradient);
+  border-radius: 2px;
+}
+
+/* Social Links */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-btn,
+.website-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--club-primary);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Space Mono", monospace;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.website-btn {
+  background: transparent;
+  color: var(--club-primary);
+}
+
+.social-btn {
+  background: transparent;
+  color: var(--club-accent);
+}
+
+.social-btn:hover,
+.website-btn:hover {
+  background: var(--club-primary);
+  color: var(--club-secondary);
+  transform: translateY(-3px);
+  box-shadow: var(--neon-glow);
+}
+
+/* Add to head section of HTML */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap");
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .club-page {
+    padding: 1rem;
+  }
+
+  .club-header {
+    padding: 3rem 1rem;
+  }
+
+  .club-title {
+    font-size: 2.5rem;
+  }
+
+  .club-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+}

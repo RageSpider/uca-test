@@ -1,0 +1,50 @@
+:root {
+  --club-primary: #40b5ad; /* Teal */
+  --club-secondary: #ff9ecd; /* Pink */
+  --club-accent: #1a1a1a; /* Black */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+}
+
+.club-header {
+  background: linear-gradient(
+    135deg,
+    var(--club-primary),
+    var(--club-secondary)
+  );
+  padding: 6rem 2rem;
+  color: var(--club-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.club-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 30% 40%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 30%
+    );
+  animation: culturalGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes culturalGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}

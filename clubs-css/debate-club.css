@@ -1,0 +1,170 @@
+:root {
+  --club-primary: #e63946; /* Bold red */
+  --club-secondary: #f1faee; /* Off white */
+  --club-accent: #1d3557; /* Navy blue */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --debate-shadow: 0 4px 20px rgba(230, 57, 70, 0.2);
+  --podium-pattern: repeating-radial-gradient(
+    circle at 50% 50%,
+    var(--club-primary) 0,
+    var(--club-primary) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  --navbar-height: 80px;
+  --footer-height: 400px;
+}
+
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--club-secondary);
+  color: var(--text-dark);
+  font-family: "Libre Baskerville", Georgia, serif;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header Section */
+.club-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-primary);
+  border-radius: 0;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.club-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--podium-pattern);
+  opacity: 0.1;
+  animation: rotatePattern 30s linear infinite;
+}
+
+@keyframes rotatePattern {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.club-title {
+  color: var(--text-light);
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  position: relative;
+  text-transform: none;
+}
+
+.club-title::before,
+.club-title::after {
+  content: "⚔";
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.club-title::before {
+  left: -3rem;
+}
+
+.club-title::after {
+  right: -3rem;
+}
+
+.club-description {
+  color: var(--text-light);
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: normal;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* Content Sections */
+.club-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.about-section,
+.connect-section {
+  background: var(--text-light);
+  padding: 3rem;
+  border-left: 5px solid var(--club-primary);
+  box-shadow: var(--debate-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.about-section:hover,
+.connect-section:hover {
+  transform: translateX(10px);
+  border-left-width: 10px;
+}
+
+.club-content h2 {
+  color: var(--club-primary);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  position: relative;
+}
+
+/* Social Links */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-btn,
+.website-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--club-primary);
+  color: var(--club-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Libre Baskerville", serif;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn:hover,
+.website-btn:hover {
+  background: var(--club-primary);
+  color: var(--text-light);
+  transform: translateY(-3px);
+}
+
+/* Add to head section of HTML */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap");

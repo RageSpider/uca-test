@@ -1,0 +1,143 @@
+:root {
+  --club-primary: #2c3e50; /* Deep blue-gray */
+  --club-secondary: #ecf0f1; /* Light gray */
+  --club-accent: #e74c3c; /* Vibrant red */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --language-shadow: 0 4px 20px rgba(44, 62, 80, 0.2);
+  --navbar-height: 80px;
+  --footer-height: 400px;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--club-secondary);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+.club-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+}
+
+.club-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-primary);
+  color: var(--text-light);
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  box-shadow: var(--language-shadow);
+}
+
+.club-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.club-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.club-description strong {
+  color: var(--club-accent);
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.club-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.language-card,
+.connect-section {
+  background: var(--text-light);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--language-shadow);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.language-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-item {
+  background: var(--club-primary);
+  color: var(--text-light);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-item:hover {
+  transform: translateY(-5px);
+  background: var(--club-accent);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .language-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .club-page {
+    padding: 1rem;
+  }
+
+  .language-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .club-header {
+    padding: 2rem 1rem;
+  }
+
+  .club-title {
+    font-size: 2.5rem;
+  }
+}

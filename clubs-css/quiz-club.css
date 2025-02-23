@@ -1,0 +1,198 @@
+:root {
+  --club-primary: #1a1a1a; /* Rich Black */
+  --club-secondary: #ffd700; /* Gold */
+  --club-accent: #9b5de5; /* Purple */
+  --correct-green: #4caf50;
+  --wrong-red: #f44336;
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --quiz-shadow: 0 4px 20px rgba(155, 93, 229, 0.2);
+  --navbar-height: 80px;
+  --footer-height: 400px;
+}
+
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  font-family: "Space Grotesk", sans-serif;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quiz-themed Header */
+.club-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-primary);
+  position: relative;
+  margin-bottom: 3rem;
+  color: var(--text-light);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.quiz-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+}
+
+.question-mark {
+  position: absolute;
+  font-size: 120px;
+  font-weight: bold;
+  color: var(--club-secondary);
+  opacity: 0.2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+.club-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid var(--club-secondary);
+  position: relative;
+  z-index: 1;
+}
+
+.club-title {
+  color: var(--club-secondary);
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid var(--club-secondary);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Question Card Style */
+.question-card {
+  background: var(--text-light);
+  border-radius: 12px;
+  box-shadow: var(--quiz-shadow);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  background: var(--club-accent);
+  color: var(--text-light);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.points {
+  background: var(--club-secondary);
+  color: var(--text-dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+/* Social Grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-item {
+  background: linear-gradient(135deg, var(--club-primary), #2a1650);
+  color: var(--text-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-item:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, var(--club-accent), #2a1650);
+}
+
+.social-item i {
+  font-size: 2rem;
+  color: var(--club-secondary);
+}
+
+.social-item span {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--club-secondary);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .club-page {
+    padding: 1rem;
+  }
+
+  .club-header {
+    padding: 3rem 1rem;
+  }
+
+  .club-title {
+    font-size: 2.8rem;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

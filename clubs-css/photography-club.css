@@ -1,0 +1,278 @@
+:root {
+  --club-primary: #457b9d; /* Ocean blue */
+  --club-secondary: #1d3557; /* Navy blue */
+  --club-accent: #f1faee; /* Off white */
+  --lens-color: #a8dadc; /* Light blue */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --lens-shadow: 0 0 15px rgba(168, 218, 220, 0.3);
+  --navbar-height: 80px;
+  --footer-height: 400px;
+}
+
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--club-secondary);
+  color: var(--text-light);
+  font-family: "Montserrat", sans-serif;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section with Camera Lens Effect */
+.club-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-secondary);
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  border: 15px solid var(--club-primary);
+}
+
+/* Lens Animation Elements */
+.club-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--lens-color) 120deg,
+    transparent 180deg
+  );
+  animation: lensSpin 8s linear infinite;
+  opacity: 0.2;
+}
+
+.club-header::after {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 2px dashed var(--lens-color);
+  border-radius: 50%;
+  animation: focusRing 4s ease-in-out infinite;
+}
+
+@keyframes lensSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes focusRing {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+}
+
+.club-title {
+  color: var(--lens-color);
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  text-shadow: var(--lens-shadow);
+  position: relative;
+  z-index: 1;
+}
+
+.club-description {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content Sections */
+.club-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.about-section,
+.connect-section {
+  background: rgba(69, 123, 157, 0.1);
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 218, 220, 0.2);
+}
+
+.about-section::before {
+  content: "📸";
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  font-size: 8rem;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+}
+
+.club-content h2 {
+  color: var(--lens-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+
+/* Social Links with Shutter Effect */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-btn,
+.website-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--lens-color);
+  color: var(--lens-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.social-btn::before,
+.website-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--lens-color);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.social-btn:hover::before,
+.website-btn:hover::before {
+  transform: translateX(0);
+}
+
+.social-btn:hover,
+.website-btn:hover {
+  color: var(--club-secondary);
+}
+
+/* Add to head section of HTML */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap");
+
+/* Lens Container and Effects */
+.lens-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+}
+
+.lens-ring {
+  position: absolute;
+  inset: 0;
+  border: 15px solid var(--club-primary);
+  border-radius: 50%;
+  animation: focusRing 4s ease-in-out infinite;
+}
+
+.lens-aperture {
+  position: absolute;
+  inset: 30px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--lens-color) 120deg,
+    transparent 180deg
+  );
+  border-radius: 50%;
+  animation: lensSpin 8s linear infinite;
+  opacity: 0.2;
+}
+
+.club-logo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.club-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Feature List Styling */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: translateX(10px);
+  background: rgba(168, 218, 220, 0.1);
+}
+
+.feature-list i {
+  color: var(--lens-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .club-header {
+    padding: 3rem 1rem;
+  }
+
+  .lens-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .club-title {
+    font-size: 2.8rem;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+}
