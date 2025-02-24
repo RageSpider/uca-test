@@ -3,19 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Literature Club - University Clubs</title>
+    <title>Literature Club - United Club Association</title>
+    <!-- External Scripts and Stylesheets -->
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/clubs-css/literature-club.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&family=EB+Garamond:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/js/include-fonts.js" defer></script>
+    <script src="/js/include-navbar.js" defer></script>
+    <script src="/js/include-footer.js" defer></script>
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        feather.replace();
+      });
+    </script>
   </head>
   <body>
-    <header class="club-header">
-      <h1 class="club-title">Literature Club</h1>
-      <p class="club-description">
-        Explore the world of words, poetry, and storytelling. Join us in
-        celebrating the beauty of literature through readings, discussions, and
-        creative writing.
-      </p>
-    </header>
-    <!-- Rest of content similar to debate club -->
+    <nav aria-label="Main Navigation">
+      <!-- Navbar content will be included here -->
+    </nav>
+    <main class="club-page" id="main-content">
+      <div class="book-spine-decoration"></div>
+      <header class="club-header" role="banner">
+        <div class="header-content">
+          <h1 class="club-title">Literature Club</h1>
+          <p class="club-description">
+            <strong>READ • WRITE • IMAGINE</strong>
+            <span class="quote"
+              >"Words are, in my not-so-humble opinion, our most inexhaustible
+              source of magic."</span
+            >
+          </p>
+        </div>
+      </header>
+      <section class="club-content">
+        <div class="literature-card book-style">
+          <div class="card-header">
+            <h2><i data-feather="book-open"></i> About Our Club</h2>
+          </div>
+          <div class="card-content">
+            <p class="first-letter">
+              Welcome to the Literature Club, a sanctuary for book lovers and
+              aspiring writers. We celebrate the written word in all its forms,
+              from classic novels to contemporary poetry. Join us in exploring
+              the boundless realms of literature through book discussions,
+              creative writing workshops, poetry readings, and our cozy literary
+              cafés.
+            </p>
+          </div>
+        </div>
+        <div class="connect-section manuscript-style">
+          <h2><i data-feather="feather"></i> Join Our Community</h2>
+          <div class="social-grid">
+            <a href="#" class="social-item">
+              <i data-feather="globe"></i>
+              <span>Official Website</span>
+            </a>
+            <a href="#" class="social-item">
+              <i data-feather="instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-item">
+              <i data-feather="facebook"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

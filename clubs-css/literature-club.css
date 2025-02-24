@@ -1,16 +1,58 @@
 :root {
-  --club-primary: #1a1a1a; /* Black */
-  --club-secondary: #ffd700; /* Golden */
-  --club-accent: #8b4513; /* Antique Brown */
-  --text-light: #ffffff;
-  --text-dark: #1a1a1a;
+  --club-primary: #8b4513; /* Rich leather brown */
+  --club-secondary: #f4e9d7; /* Aged paper */
+  --club-accent: #2f1810; /* Dark wood */
+  --club-highlight: #d4a373; /* Soft leather */
+  --text-light: #f4e9d7;
+  --text-dark: #2f1810;
+  --shadow: 0 4px 20px rgba(47, 24, 16, 0.2);
+  --book-edge: repeating-linear-gradient(
+    to right,
+    var(--club-primary),
+    var(--club-primary) 2px,
+    #a0522d 2px,
+    #a0522d 4px
+  );
+  --navbar-height: 80px;
+  --footer-height: 400px;
 }
 
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--club-secondary);
+  color: var(--text-dark);
+  font-family: "EB Garamond", serif;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  position: relative;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Book Spine Decoration */
+.book-spine-decoration {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: var(--book-edge);
+  z-index: 10;
+}
+
+/* Header Section */
 .club-header {
-  background: linear-gradient(135deg, var(--club-primary), #2c1810);
-  padding: 6rem 2rem;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--club-accent);
   color: var(--text-light);
   position: relative;
+  margin-bottom: 3rem;
+  border: 2px solid var(--club-primary);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -21,21 +63,156 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 215, 0, 0.05) 0px,
-    rgba(255, 215, 0, 0.05) 1px,
-    transparent 1px,
-    transparent 10px
-  );
-  animation: pageFlip 10s linear infinite;
+  background-image: url("/images/paper-texture.jpg");
+  opacity: 0.1;
+  pointer-events: none;
 }
 
-@keyframes pageFlip {
-  0% {
-    transform: translateX(0);
+.club-title {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.quote {
+  display: block;
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.4rem); /* Responsive font size */
+  color: var(--club-highlight);
+  margin-top: 0.5rem;
+}
+
+/* Literature Card */
+.literature-card {
+  background: var(--text-light);
+  padding: 3rem;
+  border: 2px solid var(--club-primary);
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.literature-card:hover {
+  transform: translateY(-5px);
+}
+
+.literature-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border: 1px solid var(--club-primary);
+  pointer-events: none;
+  border-radius: 6px;
+  opacity: 0.5;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.first-letter {
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  padding: 0.5rem 1rem 0 0;
+  font-family: "Playfair Display", serif;
+  color: var(--club-primary);
+}
+
+.card-header h2 {
+  color: var(--club-primary);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid var(--club-primary);
+  padding-bottom: 1rem;
+}
+
+/* Connect Section */
+.connect-section {
+  background: var(--text-light);
+  padding: 3rem;
+  border: 2px solid var(--club-primary);
+  border-radius: 8px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.social-item {
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-dark);
+  background: var(--club-secondary);
+  border: 1px solid var(--club-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.social-item::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border: 1px solid var(--club-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+.social-item:hover::before {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-spine-decoration {
+    width: 10px;
   }
-  100% {
-    transform: translateX(20px);
+  .club-header {
+    padding: 2rem;
+  }
+  .literature-card,
+  .connect-section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-spine-decoration {
+    display: none;
+  }
+  .club-header {
+    padding: 1.5rem;
+  }
+  .club-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+  }
+  .quote {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
   }
 }

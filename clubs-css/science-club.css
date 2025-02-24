@@ -2,12 +2,14 @@
   --club-primary: #1a1a1a; /* Rich Black */
   --club-secondary: #2d2d2d; /* Dark Gray */
   --club-accent: #404040; /* Medium Gray */
-  --club-highlight: #c0c0c0; /* Silver */
+  --club-highlight: #00ff41; /* Neon Green */
+  --club-glow: 0 0 10px rgba(0, 255, 65, 0.3);
   --text-light: #ffffff;
   --text-dark: #1a1a1a;
   --science-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   --navbar-height: 80px;
   --footer-height: 400px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .club-page {
@@ -65,25 +67,28 @@
 .element-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   max-width: 800px;
   margin: 0 auto 2rem;
-  position: relative;
-  z-index: 1;
+  padding: 0 1rem;
 }
 
 .element {
   background: var(--club-secondary);
   color: var(--club-highlight);
-  padding: 2.5rem;
+  padding: 2rem;
   border: 2px solid var(--club-accent);
-  border-radius: 4px;
+  border-radius: 8px;
   font-family: "Space Mono", monospace;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   position: relative;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .faded-u {
@@ -101,10 +106,9 @@
 }
 
 .element:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.05);
   background: var(--club-accent);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5),
-    inset 0 0 15px rgba(192, 192, 192, 0.2);
+  box-shadow: var(--club-glow), inset 0 0 15px rgba(0, 255, 65, 0.2);
 }
 
 .club-description {
@@ -129,21 +133,17 @@
 .lab-card {
   background: var(--club-secondary);
   border: 1px solid var(--club-accent);
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 2rem;
   position: relative;
   box-shadow: var(--science-shadow);
+  transition: var(--transition);
 }
 
-.lab-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--club-highlight), var(--club-accent));
+.lab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--club-glow), var(--science-shadow);
 }
 
 .card-header {
@@ -152,6 +152,16 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-bottom: 2px solid var(--club-highlight);
+}
+
+.card-header h2 {
+  color: var(--club-highlight);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Exo 2", sans-serif;
 }
 
 .card-content {
@@ -163,7 +173,7 @@
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -171,16 +181,22 @@
 .experiment-list li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   padding: 1rem;
   background: var(--club-primary);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  transition: var(--transition);
+  border: 1px solid var(--club-accent);
 }
 
 .experiment-list li:hover {
   background: var(--club-accent);
   transform: translateX(5px);
+  border-color: var(--club-highlight);
+}
+
+.experiment-list li i {
+  color: var(--club-highlight);
 }
 
 /* Social Grid */
@@ -221,6 +237,21 @@
 @media (max-width: 768px) {
   .element-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .element {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .club-header {
+    padding: 2rem 1rem;
+  }
+
+  .club-description strong {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
   }
 
   .experiment-list {
@@ -229,5 +260,20 @@
 
   .social-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .element-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .club-page {
+    padding: 1rem;
+  }
+
+  .lab-card {
+    margin-bottom: 1.5rem;
   }
 }
