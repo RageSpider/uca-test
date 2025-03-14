@@ -18,31 +18,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Literature Club - United Club Association</title>
+
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="Join the Literature Club at University Laboratory School and College - a sanctuary for book lovers and aspiring writers exploring the boundless realms of literature."
+    />
+    <meta
+      name="keywords"
+      content="literature club, book club, creative writing, poetry, ULSC, University Laboratory School and College"
+    />
+
     <!-- External Scripts and Stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/clubs-css/literature-club.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/DU_Logo.ico" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&family=EB+Garamond:ital@0;1&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Component scripts -->
     <script src="/js/include-fonts.js" defer></script>
     <script src="/js/include-navbar.js" defer></script>
     <script src="/js/include-footer.js" defer></script>
     <script src="https://unpkg.com/feather-icons" defer></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        feather.replace();
-      });
-    </script>
   </head>
   <body>
-    <nav aria-label="Main Navigation">
-      <!-- Navbar content will be included here -->
-    </nav>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navbar will be inserted here by include-navbar.js -->
+
     <main class="club-page" id="main-content">
-      <div class="book-spine-decoration"></div>
+      <div class="book-spine-decoration" aria-hidden="true"></div>
+
       <header class="club-header" role="banner">
         <div class="header-content">
           <h1 class="club-title">Literature Club</h1>
@@ -55,6 +72,7 @@
           </p>
         </div>
       </header>
+
       <section class="club-content">
         <div class="literature-card book-style">
           <div class="card-header">
@@ -69,10 +87,18 @@
               creative writing workshops, poetry readings, and our cozy literary
               cafés.
             </p>
+            <p>
+              Join the Literature Club and embark on a journey of discovery.
+            </p>
           </div>
         </div>
+
         <div class="connect-section manuscript-style">
-          <h2><i data-feather="feather"></i> Join Our Community</h2>
+          <h2><i data-feather="book"></i> Join Our Literary Circle</h2>
+          <p class="connect-intro">
+            Connect with fellow book lovers, share your literary journey, and
+            stay updated on our upcoming reading sessions and poetry nights.
+          </p>
           <div class="social-grid">
             <a href="#" class="social-item">
               <i data-feather="globe"></i>
@@ -86,9 +112,26 @@
               <i data-feather="facebook"></i>
               <span>Facebook</span>
             </a>
+            <a href="mailto:literature@ulsc.edu" class="social-item">
+              <i data-feather="mail"></i>
+              <span>Contact Us</span>
+            </a>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Footer will be inserted here by include-footer.js -->
+
+    <!-- Initialize Feather Icons -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof feather !== "undefined") {
+          feather.replace({
+            "aria-hidden": "true",
+          });
+        }
+      });
+    </script>
   </body>
 </html>

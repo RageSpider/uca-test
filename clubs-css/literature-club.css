@@ -15,6 +15,23 @@
   );
   --navbar-height: 80px;
   --footer-height: 400px;
+  --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accessibility - Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--club-primary);
+  color: var(--text-light);
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .club-page {
@@ -54,6 +71,18 @@
   box-shadow: var(--shadow);
   border-radius: 8px;
   overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .club-header::before {
@@ -93,7 +122,32 @@
   position: relative;
   margin-bottom: 2rem;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
+  transition: var(--transition-standard);
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.literature-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.literature-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.literature-card:nth-child(4) {
+  animation-delay: 0.6s;
 }
 
 .literature-card:hover {
@@ -121,6 +175,14 @@
   color: var(--text-dark);
 }
 
+.card-content p {
+  margin-bottom: 1.5rem;
+}
+
+.card-content p:last-child {
+  margin-bottom: 0;
+}
+
 .first-letter {
   font-size: 3.5rem;
   float: left;
@@ -142,77 +204,228 @@
   padding-bottom: 1rem;
 }
 
-/* Connect Section */
+/* Event Items */
+.event-item {
+  display: flex;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed var(--club-primary);
+}
+
+.event-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.event-date {
+  background: var(--club-primary);
+  color: var(--text-light);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-date .month {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event-date .day {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-details h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--club-accent);
+  font-family: "Playfair Display", serif;
+}
+
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--club-primary);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Connect Section with redesigned background */
 .connect-section {
   background: var(--text-light);
   padding: 3rem;
   border: 2px solid var(--club-primary);
   border-radius: 8px;
-  position: relative;
+  margin-bottom: 2rem;
   box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  background-image: radial-gradient(var(--club-highlight) 1px, transparent 1px),
+    radial-gradient(var(--club-highlight) 1px, var(--text-light) 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.connect-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 233, 215, 0.9) 0%,
+    rgba(244, 233, 215, 0.7) 100%
+  );
+  border-radius: 6px;
+}
+
+.connect-section h2,
+.social-grid,
+.connect-intro {
+  position: relative;
+  z-index: 1;
+}
+
+.connect-intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+  color: var(--club-accent);
 }
 
 .social-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  color: var(--text-dark);
-  background: var(--club-secondary);
-  border: 1px solid var(--club-primary);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.social-item::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  bottom: 5px;
-  left: 5px;
+  color: var(--club-accent);
+  text-decoration: none;
+  transition: var(--transition-standard);
   border: 1px solid var(--club-primary);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.social-item:hover::before {
-  opacity: 1;
+.social-item:hover {
+  transform: translateY(-5px);
+  background: var(--club-primary);
+  color: var(--text-light);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Design */
+.social-item svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+/* Style Variations - Updated manuscript style */
+.manuscript-style {
+  background-image: linear-gradient(
+      45deg,
+      rgba(139, 69, 19, 0.05) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(139, 69, 19, 0.05) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(139, 69, 19, 0.05) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(139, 69, 19, 0.05) 75%
+    );
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-color: var(--text-light);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-  .book-spine-decoration {
-    width: 10px;
+  .club-page {
+    padding: 1rem;
   }
-  .club-header {
-    padding: 2rem;
-  }
-  .literature-card,
-  .connect-section {
-    padding: 2rem;
-  }
-}
 
-@media (max-width: 480px) {
+  .literature-card {
+    padding: 1.5rem;
+  }
+
+  .first-letter {
+    font-size: 2.5rem;
+  }
+
   .book-spine-decoration {
     display: none;
   }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .literature-card,
+  .connect-section,
   .club-header {
-    padding: 1.5rem;
+    animation: none;
+    opacity: 1;
   }
+
+  .literature-card:hover,
+  .social-item:hover,
+  .leader-card:hover {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .club-page {
+    box-shadow: none;
+    min-height: auto;
+  }
+
+  .book-spine-decoration,
+  .social-grid {
+    display: none;
+  }
+
+  .club-header {
+    background: none;
+    color: var(--text-dark);
+    border: none;
+    box-shadow: none;
+  }
+
   .club-title {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-  }
-  .quote {
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    color: var(--club-primary);
   }
 }

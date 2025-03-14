@@ -1,19 +1,61 @@
 :root {
-  --club-primary: #40b5ad; /* Teal */
-  --club-secondary: #ff9ecd; /* Pink */
-  --club-accent: #1a1a1a; /* Black */
+  --club-primary: #8e44ad; /* Rich Purple */
+  --club-secondary: #f39c12; /* Warm Orange */
+  --club-accent: #2ecc71; /* Vibrant Green */
+  --club-neutral: #f5f5f5; /* Light Gray */
   --text-light: #ffffff;
-  --text-dark: #1a1a1a;
+  --text-dark: #2c3e50;
+  --cultural-shadow: 0 10px 30px rgba(142, 68, 173, 0.15);
+  --navbar-height: 80px;
+  --footer-height: 400px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--club-neutral);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+.club-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--club-neutral);
+  color: var(--text-dark);
+  font-family: "Poppins", sans-serif;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Pattern */
+.club-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(142, 68, 173, 0.05) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(243, 156, 18, 0.05) 0%, transparent 25%);
+  z-index: -1;
+}
+
+/* Header Section */
 .club-header {
-  background: linear-gradient(
-    135deg,
-    var(--club-primary),
-    var(--club-secondary)
-  );
+  text-align: center;
   padding: 6rem 2rem;
-  color: var(--club-accent);
+  background: linear-gradient(135deg, var(--club-primary), var(--club-secondary));
+  color: var(--text-light);
+  border-radius: 16px;
+  margin-bottom: 3rem;
+  box-shadow: var(--cultural-shadow);
   position: relative;
   overflow: hidden;
 }
@@ -25,17 +67,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at 30% 40%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 70% 60%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 30%
-    );
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
   animation: culturalGlow 8s ease-in-out infinite alternate;
+}
+
+.club-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/cultural-pattern.png');
+  background-size: 200px 200px;
+  opacity: 0.1;
+  mix-blend-mode: overlay;
 }
 
 @keyframes culturalGlow {
@@ -46,5 +94,232 @@
   100% {
     transform: scale(1.2);
     opacity: 0.8;
+  }
+}
+
+.club-title {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.club-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--club-accent);
+  border-radius: 2px;
+}
+
+.club-description {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Club Content Layout */
+.club-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Card Layouts */
+.about-section,
+.connect-section {
+  background: var(--text-light);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: var(--cultural-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section:hover,
+.connect-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(142, 68, 173, 0.2);
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--club-primary), var(--club-secondary));
+}
+
+.connect-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--club-secondary), var(--club-accent));
+}
+
+.about-section h2,
+.connect-section h2 {
+  color: var(--club-primary);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.about-section h2::after,
+.connect-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--club-secondary);
+  border-radius: 2px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* Social Links */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-btn,
+.website-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--club-primary);
+  color: var(--club-primary);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.social-btn::before,
+.website-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--club-primary);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.social-btn:hover::before,
+.website-btn:hover::before {
+  left: 0;
+}
+
+.social-btn:hover,
+.website-btn:hover {
+  color: var(--text-light);
+  transform: translateY(-3px);
+  box-shadow: var(--cultural-shadow);
+}
+
+.website-btn {
+  border-color: var(--club-accent);
+  color: var(--club-accent);
+}
+
+.website-btn::before {
+  background: var(--club-accent);
+}
+
+.social-btn i,
+.website-btn i {
+  transition: var(--transition);
+}
+
+.social-btn:hover i,
+.website-btn:hover i {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .club-page {
+    padding: 1rem;
+  }
+
+  .club-header {
+    padding: 4rem 1rem;
+  }
+
+  .club-title {
+    font-size: 3rem;
+  }
+
+  .club-description {
+    font-size: 1.2rem;
+  }
+
+  .about-section,
+  .connect-section {
+    padding: 2rem;
+  }
+
+  .about-section h2,
+  .connect-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .club-header {
+    padding: 3rem 1rem;
+  }
+
+  .club-title {
+    font-size: 2.5rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
   }
 }

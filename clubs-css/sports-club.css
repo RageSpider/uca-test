@@ -1,13 +1,14 @@
 :root {
   --club-primary: #1e3a8a; /* Navy blue */
   --club-secondary: #f8fafc; /* Light silver */
-  --club-accent: #64748b; /* Cool gray */
-  --club-hover: #2563eb; /* Bright blue */
+  --club-accent: #ef4444; /* Energetic red */
+  --club-highlight: #2563eb; /* Bright blue */
   --text-light: #ffffff;
   --text-dark: #1a1a1a;
-  --sports-shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
+  --sports-shadow: 0 8px 30px rgba(30, 58, 138, 0.15);
   --navbar-height: 80px;
   --footer-height: 400px;
+  --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .club-page {
@@ -20,32 +21,81 @@
   min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-/* Header Section */
+/* Header Section with dynamic background */
 .club-header {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   background: linear-gradient(135deg, var(--club-primary), #1e40af);
   position: relative;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 3rem;
   color: var(--text-light);
+  overflow: hidden;
+  box-shadow: var(--sports-shadow);
+}
+
+.club-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/images/sports-pattern.png"),
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(37, 99, 235, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(239, 68, 68, 0.3) 0%,
+      transparent 50%
+    );
+  background-size: 100px 100px, 100% 100%, 100% 100%;
+  opacity: 0.2;
 }
 
 .club-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   font-family: "Oswald", sans-serif;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.club-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--club-accent);
+  border-radius: 2px;
 }
 
 .club-description {
-  font-size: 1.2rem;
-  max-width: 600px;
+  font-size: 1.4rem;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+  position: relative;
+}
+
+.club-description strong {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  color: var(--club-accent);
 }
 
 /* Content Sections */
@@ -57,51 +107,137 @@
   margin-bottom: 2rem;
 }
 
+/* Sports cards with improved design */
 .about-section,
-.connect-section {
+.connect-section,
+.sports-section {
   background: var(--text-light);
-  padding: 2.5rem;
-  border-radius: 8px;
+  padding: 3rem;
+  border-radius: 12px;
   box-shadow: var(--sports-shadow);
-  border-left: 4px solid var(--club-primary);
-  transition: transform 0.3s ease;
+  transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+  border-top: 5px solid var(--club-primary);
 }
 
 .about-section:hover,
-.connect-section:hover {
-  transform: translateX(5px);
+.connect-section:hover,
+.sports-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(30, 58, 138, 0.2);
 }
 
 .club-content h2 {
   color: var(--club-primary);
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1.5rem;
   font-family: "Oswald", sans-serif;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  position: relative;
+  padding-bottom: 0.8rem;
 }
 
+.club-content h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--club-accent);
+  border-radius: 2px;
+}
+
+.club-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+/* Feature list with improved styling */
 .feature-list {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .feature-list li {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.75rem 0;
-  color: var(--club-accent);
-  font-weight: 500;
+  padding: 1rem 1.5rem;
+  background: rgba(30, 58, 138, 0.05);
+  border-radius: 8px;
+  transition: var(--transition-standard);
+  border-left: 3px solid var(--club-primary);
+}
+
+.feature-list li:hover {
+  background: rgba(30, 58, 138, 0.1);
+  transform: translateX(5px);
 }
 
 .feature-list li i {
-  color: var(--club-primary);
+  color: var(--club-accent);
+  stroke-width: 2.5;
 }
 
-/* Social Links */
+/* Sports showcase section */
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sport-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+  box-shadow: var(--sports-shadow);
+  transition: var(--transition-standard);
+}
+
+.sport-card:hover {
+  transform: scale(1.03);
+}
+
+.sport-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-standard);
+}
+
+.sport-card:hover img {
+  transform: scale(1.1);
+}
+
+.sport-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: var(--text-light);
+}
+
+.sport-info h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Social Links with improved styling */
 .social-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -115,22 +251,51 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.2rem;
   background: transparent;
   border: 2px solid var(--club-primary);
   color: var(--club-primary);
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
-  border-radius: 4px;
+  transition: var(--transition-standard);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.social-btn::before,
+.website-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--club-primary);
+  transition: var(--transition-standard);
+  z-index: -1;
+}
+
+.social-btn:hover::before,
+.website-btn:hover::before {
+  left: 0;
 }
 
 .social-btn:hover,
 .website-btn:hover {
-  background: var(--club-primary);
   color: var(--text-light);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--sports-shadow);
+}
+
+.website-btn {
+  border-color: var(--club-accent);
+  color: var(--club-accent);
+}
+
+.website-btn::before {
+  background: var(--club-accent);
 }
 
 /* Responsive Design */
@@ -144,10 +309,20 @@
   }
 
   .club-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr;
   }
 
   .social-links {
     grid-template-columns: 1fr;
+  }
+
+  .about-section,
+  .connect-section,
+  .sports-section {
+    padding: 2rem;
   }
 }
