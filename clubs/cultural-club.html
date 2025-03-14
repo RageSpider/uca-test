@@ -1,21 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H2YV0FNQ9X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H2YV0FNQ9X");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cultural Club - University Clubs</title>
+    <title>Cultural Club - United Club Association</title>
+    <script src="/js/include-fonts.js"></script>
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/clubs-css/cultural-club.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
-    <header class="club-header">
-      <h1 class="club-title">Cultural Club</h1>
-      <p class="club-description">
-        Celebrate diversity through art, music, and cultural performances.
-        Experience the richness of different traditions and express your
-        creativity.
-      </p>
-    </header>
-    <!-- Rest of content similar to debate club -->
+    <!-- Navbar -->
+    <script src="/js/include-navbar.js"></script>
+
+    <main class="club-page">
+      <header class="club-header">
+        <h1 class="club-title">Cultural Club</h1>
+        <p class="club-description">
+          Celebrate diversity through art, music, and cultural performances.
+          Experience the richness of different traditions and express your
+          creativity.
+        </p>
+      </header>
+
+      <section class="club-content">
+        <div class="about-section">
+          <h2>About Us</h2>
+          <p>
+            The University Laboratory Cultural Club is a vibrant community
+            dedicated to celebrating the diverse cultural heritage of our
+            students. We organize cultural events, performances, art
+            exhibitions, and workshops that showcase traditional and
+            contemporary artistic expressions. Our club provides a platform for
+            students to explore their creative talents and share their cultural
+            backgrounds with the wider community.
+          </p>
+        </div>
+
+        <div class="connect-section">
+          <h2>Connect With Us</h2>
+          <div class="social-links">
+            <a
+              href="https://sites.google.com/view/ulcc"
+              class="website-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-feather="globe"></i>
+              <span>Official Website</span>
+            </a>
+            <a
+              href="https://www.facebook.com/ulcc.fb"
+              class="social-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-feather="facebook"></i>
+              <span>Follow on Facebook</span>
+            </a>
+            <a
+              href="https://www.instagram.com/ulcc.ig"
+              class="social-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-feather="instagram"></i>
+              <span>Follow on Instagram</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <script src="/js/include-footer.js"></script>
+
+    <!-- Initialize Icons -->
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
