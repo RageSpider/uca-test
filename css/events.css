@@ -1,309 +1,243 @@
-/* Root Variables - Dark Fresh Theme */
 :root {
-  /* --- Color Palette --- */
-  --primary-color: #1e88e5; /* Slightly darker blue */
-  --secondary-color: #121212; /* Near-black for dark mode */
-  --accent-color: #ff4500; /* Brighter orange-red for highlights */
-  --neutral-color: #6b7280; /* Slightly darker gray for subtle UI elements */
-  /* --- Background Colors --- */
-  --background-light: #121212; /* Near-black background */
-  --background-dark: #000000; /* Pure black for deeper contrast */
-  /* --- Text Colors --- */
-  --text-light: #dbb296; /* Pure white for primary text */
-  --text-dark: #99dae2; /* Off-white for secondary text */
-  --text-accent: var(--accent-color); /* Use Accent Color for Highlights */
-  --text-muted: var(--neutral-color); /* Subdued text for descriptions */
-  /* --- Gradient Colors --- */
-  --primary-gradient: linear-gradient(
-    135deg,
-    #1e88e5,
-    #1565c0
-  ); /* Deeper blue gradients */
-  --secondary-gradient: linear-gradient(135deg, #1565c0, #0d47a1);
-  --tertiary-gradient: linear-gradient(135deg, #0d47a1, #01579b);
-  --quaternary-gradient: linear-gradient(135deg, #01579b, #003d6b);
-  /* --- Card Styles --- */
-  --card-bg: #1e1e1e; /* Darker card background */
-  --card-shadow: rgba(0, 0, 0, 0.5); /* Stronger shadow */
-  --hover-shadow: rgba(0, 0, 0, 0.7); /* Even stronger hover shadow */
+  --primary-color: #4a90e2;
+  --secondary-color: #1a2a3a;
+  --accent-color: #f7b733;
+  --neutral-color: #a0aec0;
+  --background-light: #f8f9fa;
+  --background-dark: #2d3748;
+  --text-light: #ffffff;
+  --text-dark: #2d3748;
+  --text-muted: #718096;
+  --featured-gradient: linear-gradient(to right, #4a90e2, #5e72e4);
+  --secondary-gradient: linear-gradient(to right, #5e72e4, #825ee4);
+  --tertiary-gradient: linear-gradient(to right, #825ee4, #7795f8);
+  --quaternary-gradient: linear-gradient(to right, #7795f8, #6772e5);
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --hover-shadow: rgba(0, 0, 0, 0.15);
   --card-border-radius: 12px;
-  /* --- Typography --- */
   --base-font-size: 16px;
-  --font-family-base: "Nunito", sans-serif; /* Modern, Readable Font */
-  --font-family-headings: "Roboto Slab", serif; /* Stronger Font */
   --line-height-base: 1.7;
-  /* --- Spacing --- */
-  --space-xs: 0.25rem; /* 4px */
-  --space-sm: 0.5rem; /* 8px */
-  --space-md: 1rem; /* 16px */
-  --space-lg: 1.5rem; /* 24px */
-  --space-xl: 2rem; /* 32px */
-  /* --- Transition Speed --- */
-  --transition: all 0.3s ease-in-out;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ==========================================================================
-   1. General Styles & Reset
-   ========================================================================== */
-/* Box-sizing and Reset */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body Styles */
 body {
   font-size: var(--base-font-size);
-  font-family: var(--font-family-base);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: var(--line-height-base);
   background-color: var(--background-light);
   color: var(--text-dark);
-  -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS */
 }
 
-/* ==========================================================================
-   2. Accessibility Improvements
-   ========================================================================== */
-/* Focus Styles */
 :focus {
   outline: 2px solid var(--accent-color);
-  outline-offset: 2px; /* Avoid overlapping content */
+  outline-offset: 2px;
 }
 
-/* --- Loading Animation --- */
 .loading-spinner {
-  border: 4px solid rgba(255, 255, 255, 0.1); /* Light border for visibility */
-  width: 50px;
-  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border-left-color: var(--accent-color);
   animation: spin 1s linear infinite;
-  margin: var(--space-xl) auto; /* Center the spinner */
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  margin: var(--space-lg) auto;
 }
 
-/* ==========================================================================
-   3. Layout & Components
-   ========================================================================== */
-/* --- Hero Section --- */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .hero {
-  background: url("/images/events-title-bg.jpg");
+  background-color: #2a4365;
+  background-image: linear-gradient(rgba(42, 67, 101, 0.7), rgba(42, 67, 101, 0.7)),
+    url("/images/events-title-bg.jpg");
   background-size: cover;
   background-position: center;
-  height: 60vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: var(--text-light);
-  font-family: "Montserrat", sans-serif;
-  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.9); /* Stronger shadow for light text */
-  padding: var(--space-xl);
+  padding: var(--space-lg);
 }
+
 .hero h1 {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: var(--space-sm);
   letter-spacing: -0.03em;
 }
-.hero p {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  max-width: 800px;
-  margin: 0 auto;
-}
 
-/* --- Sections with Gradient Backgrounds --- */
 .featured-events,
 .upcoming-events,
 .all-events-cta,
 .join-club-cta {
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
   text-align: center;
   color: var(--text-light);
+  position: relative;
+  z-index: 1;
 }
+
 .featured-events {
-  background: var(--primary-gradient);
+  background-color: #4a90e2;
+  background-image: var(--featured-gradient);
+  position: relative;
 }
-.upcoming-events {
-  background: var(--secondary-gradient);
-}
+
 .all-events-cta {
-  background: var(--tertiary-gradient);
+  background-color: #825ee4;
+  background-image: var(--tertiary-gradient);
+  position: relative;
 }
+
 .join-club-cta {
-  background: var(--quaternary-gradient);
+  background-color: #7795f8;
+  background-image: var(--quaternary-gradient);
 }
+
 .featured-events h2,
-.upcoming-events h2,
 .all-events-cta h2,
 .join-club-cta h2 {
-  font-family: "Montserrat", "Anek Bangla";
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   margin-bottom: var(--space-lg);
   font-weight: 700;
   letter-spacing: 0.01em;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Grid Layout for Articles/Events --- */
-.articles,
-.event-list {
+.articles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-xl);
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-md);
 }
 
-/* --- Card Styling --- */
-article,
-.event-item {
+article {
   position: relative;
   background: var(--card-bg);
   border-radius: var(--card-border-radius);
-  box-shadow: 0 5px 10px var(--card-shadow);
+  box-shadow: 0 4px 8px var(--card-shadow);
   overflow: hidden;
-  transition: var(--transition), transform 0.2s ease-in-out;
+  transition: var(--transition);
+  will-change: transform;
 }
-article:hover,
-.event-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px var(--hover-shadow);
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--hover-shadow);
 }
-.article-wrapper,
-.event-item {
+
+.article-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
+
 figure {
   margin: 0;
   padding: 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
-article img,
-.event-item img {
+
+article img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  will-change: transform;
 }
-article img:hover,
-.event-item img:hover {
-  transform: scale(1.1);
+
+article img:hover {
+  transform: scale(1.05);
 }
-.article-body,
-.event-body {
+
+.article-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: var(--space-md);
 }
-article h3,
-.event-item h3 {
-  font-family: "Alkatra", "Montserrat";
-  font-size: 1.75rem;
+
+.article-body h2 {
+  font-size: 1.5rem;
   margin-bottom: var(--space-sm);
   color: var(--text-dark);
-  font-family: var(--font-family-headings);
   font-weight: 600;
+  text-align: left;
 }
-article p,
-.event-item p {
-  font-family: "Montserrat", "Anek Bangla";
-  font-size: 1rem;
+
+.article-body p {
+  font-size: 0.95rem;
   margin-bottom: var(--space-md);
   flex-grow: 1;
   color: var(--text-muted);
   line-height: 1.5;
-}
-.event-item .date {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: var(--space-sm);
+  text-align: left;
 }
 
-/* ==========================================================================
-   4. Buttons
-   ========================================================================== */
 .details-btn,
 .cta-button {
   display: inline-block;
-  padding: var(--space-sm) var(--space-md);
-  font-family: "Comfortaa", sans-serif;
-  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 8px;
-  transition: var(--transition);
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
   border: 2px solid transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .details-btn:hover,
 .cta-button:hover {
   background-color: transparent;
-  color: var(--primary-color);
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
-.details-btn:active,
-.cta-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+.cta-content {
+  padding: var(--space-md) 0;
 }
 
-/* ==========================================================================
-   5. Responsive Design
-   ========================================================================== */
+.cta-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
-  .featured-events h2,
-  .upcoming-events h2,
-  .all-events-cta h2,
-  .join-club-cta h2 {
-    font-size: 2rem;
-  }
-  .articles,
-  .event-list {
+  .articles {
     grid-template-columns: 1fr;
     padding: 0 var(--space-sm);
   }
-}
-
-/* ==========================================================================
-   6. Utility Classes (Optional but Recommended)
-   ========================================================================== */
-.text-center {
-  text-align: center;
-}
-.mt-0 {
-  margin-top: 0;
-}
-.bg-dark {
-  background-color: var(--background-dark);
-}
-.shadow-lg {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  .article-body h2 {
+    font-size: 1.3rem;
+  }
 }
