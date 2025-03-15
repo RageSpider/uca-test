@@ -1,92 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H2YV0FNQ9X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-H2YV0FNQ9X");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - United Club Association</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="Learn about the United Club Association (UCA), a collaborative organization of university clubs established in 2024."
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
-      rel="stylesheet"
+    <meta
+      name="keywords"
+      content="UCA, United Club Association, university clubs, student organizations"
     />
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/about.css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/DU_Logo.ico" />
+
+    <!-- Include centralized fonts -->
+    <script src="/js/include-fonts.js" defer></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/about.css" />
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons" defer></script>
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navbar will be inserted here by include-navbar.js -->
     <script src="/js/include-navbar.js" defer></script>
 
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <h1 id="hero-heading">About UCA</h1>
-        <p>
-          Learn more about the United Club Association and its mission to unite
-          and support clubs.
-        </p>
-      </div>
-    </section>
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-content">
+          <h1 id="hero-heading">About UCA</h1>
+          <p class="hero-subtitle">
+            United Club Association: Established October 10, 2024
+          </p>
+        </div>
+      </section>
 
-    <!-- About Section -->
-    <section class="about" aria-labelledby="about-heading">
-      <div class="about-content">
-        <h2 id="about-heading">Our Mission</h2>
-        <p>
-          The United Club Association (UCA) is dedicated to fostering a vibrant
-          community of clubs at University Laboratory School and College. We aim
-          to empower students by providing resources, guidance, and a platform
-          for collaboration among clubs.
-        </p>
-        <p>
-          Through our efforts, we strive to create an environment where students
-          can explore their interests, develop leadership skills, and contribute
-          to the school's culture.
-        </p>
-      </div>
-    </section>
+      <!-- About Section -->
+      <section class="about-section" aria-labelledby="about-heading">
+        <div class="container">
+          <h2 id="about-heading">Our Mission</h2>
+          <div class="section-description">
+            <p>
+              The United Club Association (UCA) is dedicated to fostering a vibrant
+              community of clubs at University Laboratory School and College. We aim
+              to empower students by providing resources, guidance, and a platform
+              for collaboration among clubs.
+            </p>
+            <p>
+              Through our efforts, we strive to create an environment where students
+              can explore their interests, develop leadership skills, and contribute
+              to the school's culture.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Values Section -->
-    <section class="values" aria-labelledby="values-heading">
-      <h2 id="values-heading">Our Core Values</h2>
-      <ul class="values-list">
-        <li>
-          <i data-feather="users"></i>
-          <h3>Community</h3>
-          <p>
-            We believe in building a strong sense of community among students,
-            faculty, and staff.
-          </p>
-        </li>
-        <li>
-          <i data-feather="award"></i>
-          <h3>Excellence</h3>
-          <p>
-            We encourage excellence in all activities and initiatives undertaken
-            by our clubs.
-          </p>
-        </li>
-        <li>
-          <i data-feather="heart"></i>
-          <h3>Inclusivity</h3>
-          <p>
-            We are committed to creating an inclusive environment for all
-            students, regardless of background or interests.
-          </p>
-        </li>
-      </ul>
-    </section>
+      <!-- Values Section -->
+      <section class="values-section" aria-labelledby="values-heading">
+        <div class="container">
+          <h2 id="values-heading">Our Core Values</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="value-icon">
+                <i data-feather="users"></i>
+              </div>
+              <h3>Community</h3>
+              <p>
+                We believe in building a strong sense of community among students,
+                faculty, and staff through collaborative events and initiatives.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i data-feather="award"></i>
+              </div>
+              <h3>Excellence</h3>
+              <p>
+                We encourage excellence in all activities and initiatives undertaken
+                by our clubs, supporting high standards in every endeavor.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i data-feather="heart"></i>
+              </div>
+              <h3>Inclusivity</h3>
+              <p>
+                We are committed to creating an inclusive environment for all
+                students, regardless of background or interests.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">
+                <i data-feather="compass"></i>
+              </div>
+              <h3>Innovation</h3>
+              <p>
+                We foster innovation and creative thinking, encouraging clubs to
+                explore new ideas and approaches to student activities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Structure Section -->
+      <section class="structure-section" aria-labelledby="structure-heading">
+        <div class="container">
+          <h2 id="structure-heading">Our Structure</h2>
+          <div class="section-description">
+            <p>
+              The UCA is led by the presidents of all member clubs, with the ICT Club President
+              serving as the lead for online activities. This collaborative leadership model ensures
+              that all clubs have equal representation and voice in the association's decisions.
+            </p>
+          </div>
+          <div class="cta-container">
+            <a href="/about/executive-panel.html" class="cta-button">Meet Our Executive Panel</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer will be inserted here by include-footer.js -->
     <script src="/js/include-footer.js" defer></script>

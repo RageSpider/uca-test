@@ -410,7 +410,7 @@
 @media print {
   .club-page {
     box-shadow: none;
-    min-height: auto;
+    min-height: initial;
   }
 
   .book-spine-decoration,

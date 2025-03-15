@@ -12,38 +12,109 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-H2YV0FNQ9X");
     </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Triquest</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      .fade-in {
-        animation: fadeIn 2s ease-in-out;
-      }
-    </style>
+    <title>TriQuest - UCA Event</title>
+
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="TriQuest - A collaborative event by Language, Quiz, and Science Club"
+    />
+    <meta
+      name="keywords"
+      content="TriQuest, UCA events, quiz competition, science quiz, language quiz"
+    />
+
+    <!-- Include centralized fonts -->
+    <script src="/js/include-fonts.js" defer></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/event-css/triquest.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/DU_Logo.ico" />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons" defer></script>
   </head>
-  <body
-    class="bg-gradient-to-r from-purple-500 to-pink-500 h-screen flex items-center justify-center"
-  >
-    <div class="text-center fade-in">
-      <h1 class="text-6xl md:text-8xl font-bold text-white animate-pulse">
-        Coming Soon
-      </h1>
-      <p class="mt-4 text-xl text-white opacity-80">
-        We're working on something amazing!
-      </p>
-    </div>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <script src="/js/include-navbar.js" defer></script>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Triquest</h1>
+          <p class="event-date">December 2, 2024</p>
+          <div class="event-badges">
+            <span class="badge language">Language Club</span>
+            <span class="badge quiz">Quiz Club</span>
+            <span class="badge science">Science Club</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="event-details">
+        <div class="container">
+          <h2>Top Performers</h2>
+          <div class="winners-grid">
+            <div class="winner-card second">
+              <div class="position">2nd</div>
+              <div class="trophy"><i data-feather="award"></i></div>
+              <h3>Taaha</h3>
+            </div>
+
+            <div class="winner-card first">
+              <div class="position">1st</div>
+              <div class="trophy"><i data-feather="award"></i></div>
+              <h3>Tamim Iqbal</h3>
+            </div>
+
+            <div class="winner-card third">
+              <div class="position">3rd</div>
+              <div class="trophy"><i data-feather="award"></i></div>
+              <h3>Tanvir Ahmed</h3>
+            </div>
+          </div>
+
+          <div class="event-summary">
+            <h2>Event Highlights</h2>
+            <p class="event-description">
+              TriQuest brought together enthusiastic participants in a unique
+              collaboration between Language, Quiz, and Science clubs.
+              Participants demonstrated their knowledge across linguistics,
+              general knowledge, and scientific concepts in this challenging
+              examination.
+            </p>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <i data-feather="users"></i>
+                <h4>Participants</h4>
+                <p>40</p>
+              </div>
+              <div class="stat-card">
+                <i data-feather="clock"></i>
+                <h4>Duration</h4>
+                <p>1 Hour</p>
+              </div>
+              <div class="stat-card">
+                <i data-feather="file-text"></i>
+                <h4>Format</h4>
+                <p>Written Exam</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/include-footer.js" defer></script>
   </body>
 </html>
